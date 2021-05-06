@@ -16,14 +16,19 @@ const ProductList = () => {
 
     return (
         <div>
-            product list
+           <h1>product list...</h1> 
             <ul>
                 {products.map((item, index) => 
+                <li key={index}>
                 <ProductItem productName={item.name} 
                                                            
                 productPrice={item.price}
+                
+              
                 />
+                 </li>
                 )}
+               
             </ul>
         </div>
     );

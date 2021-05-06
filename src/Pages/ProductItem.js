@@ -2,11 +2,12 @@ import React from 'react';
 
 const ProductItem = ({productName,productPrice}) => {
     return (
-        <li>
+     <div className="ProductItem">
             <p>{productName}</p>
             <p>{productPrice}</p>
-           
-        </li>
+            </div>
+        
+        
     );
 };
 
