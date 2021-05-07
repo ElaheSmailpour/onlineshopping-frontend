@@ -10,7 +10,7 @@ import NotFound from "./Pages/NotFound"
 import Shoppingcart from "./Pages/Shoppingcart"
 import Note from "./Pages/Note"
 import Contact from "./Pages/Contact"
-
+import DropDownMenu from "./Pages/Drop"
 import ProductList from "./Pages/ProductList"
 import Signup from "./Pages/Signup"
 function App() {
@@ -19,7 +19,7 @@ function App() {
 
     <Router>
       <div className="App">
-
+  
         <main>
           <Switch>
 
@@ -33,8 +33,10 @@ function App() {
             <Route path='*'> <NotFound /> </Route>
           </Switch>
         </main>
+        <DropDownMenu/>
       </div>
     </Router>
+  
   );
 }
 
