@@ -1,15 +1,51 @@
-import 'font-awesome/css/font-awesome.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+//import 'font-awesome/css/font-awesome.min.css'
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import { Link } from "react-router-dom"
+import "./styles/home.css"
 const Home = () => {
     return (
         <div className="Home">
             <h1>Eli Shop</h1>
-            <Link to="/login">Login</Link>
-            <Link to="/product">Product</Link>
-            <Link to="/shoppingcart">shopping cart</Link>	
-            <Link to="/note">Note</Link>
-            <Link to="/service">Sevice</Link>
-          
+            <div className="navbar">
+                <nav className="navbar navbar-expand-lg navbar-light  bg-light">
+
+                    <div className="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul className="navbar-nav">
+                            <li className="nav-item active">
+
+  <i className="fa fa-fw fa-user fa-2x"></i> 
+                                <Link to="/login">login</Link>
+                            </li>
+                            <li className="nav-item active">
+                                <Link to="/product">Product</Link>
+                            </li>
+                            <li className="nav-item active">
+                            <i className="fas fa-shopping-cart fa-2x"></i>
+                                <Link to="/shoppingcart">cart</Link>
+                               
+                            </li>
+                            <li className="nav-item active">
+                            <i className="far fa-heart fa-2x"></i>
+                                <Link to="/note">Note</Link>
+                            </li>
+                            <li className="nav-item active">
+                            <i className="far fa-id-card fa-2x"></i>
+                                <Link to="/Contact">Contact</Link>
+                            </li>
+                          
+                            <input className="form-control" type="text" placeholder="Search" />
+                          
+                            <button className="btn btn-outline-success my-2 my-sm-0">  <i className="fa fa-fw fa-search fa-5"></i> </button>
+
+                        </ul>
+
+                    </div>
+                </nav>
+            </div>
+
+
+
         </div>
     )
 }

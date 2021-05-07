@@ -9,8 +9,10 @@ import Home from "./Pages/Home"
 import NotFound from "./Pages/NotFound"
 import Shoppingcart from "./Pages/Shoppingcart"
 import Note from "./Pages/Note"
-import Service from "./Pages/Service"
+import Contact from "./Pages/Contact"
+
 import ProductList from "./Pages/ProductList"
+import Signup from "./Pages/Signup"
 function App() {
 
   return (
@@ -26,7 +28,8 @@ function App() {
             <Route path="/shoppingcart"><Shoppingcart /></Route>
             <Route path='/product'><ProductList /></Route>
             <Route path='/note'><Note/></Route>
-            <Route path='/service'><Service/></Route>
+            <Route path="/signup"><Signup/></Route>
+            <Route path='/Contact'><Contact/></Route>
             <Route path='*'> <NotFound /> </Route>
           </Switch>
         </main>
