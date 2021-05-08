@@ -1,0 +1,36 @@
+nav {
+    padding: 10px;
+    background-color: #666;
+    color: white;
+    display: flex;
+    position: relative;
+}
+nav > div {
+    padding: 0px 10px;
+}
+
+ul {
+    padding: 5px 10px;
+    margin: 0px;
+    display: none;
+    position: absolute;
+    background-color: rgb(209, 113, 188);
+    color: black;
+    list-style: none;
+}
+
+li {
+    margin: 5px auto;
+    padding: 5px;
+  
+}
+
+li:hover {
+    background-color: rgb(134, 236, 75);
+    color:darkred;
+    
+}
+
+div:hover > ul {
+    display: block;
+}

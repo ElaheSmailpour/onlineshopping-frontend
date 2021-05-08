@@ -10,7 +10,7 @@ import NotFound from "./Pages/NotFound"
 import Shoppingcart from "./Pages/Shoppingcart"
 import Note from "./Pages/Note"
 import Contact from "./Pages/Contact"
-import DropDownMenu from "./Pages/Drop"
+import Categorylist from "./Pages/category"
 import ProductList from "./Pages/ProductList"
 import Signup from "./Pages/Signup"
 function App() {
@@ -19,7 +19,7 @@ function App() {
 
     <Router>
       <div className="App">
-  
+  <div className="router"></div>
         <main>
           <Switch>
 
@@ -30,10 +30,11 @@ function App() {
             <Route path='/note'><Note/></Route>
             <Route path="/signup"><Signup/></Route>
             <Route path='/Contact'><Contact/></Route>
+            <Route path='/category'><Categorylist/></Route>
             <Route path='*'> <NotFound /> </Route>
           </Switch>
         </main>
-        <DropDownMenu/>
+      
       </div>
     </Router>
   

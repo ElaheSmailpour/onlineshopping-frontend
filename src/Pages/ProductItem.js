@@ -1,6 +1,8 @@
 import React from 'react';
 
 const ProductItem = ({productName,productPrice}) => {
+   
+   
     return (
      <div className="ProductItem">
             <p>{productName}</p>
