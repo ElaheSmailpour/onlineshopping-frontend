@@ -1,11 +1,10 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { Link } from "react-router-dom"
 import "./styles/home.css"
 const Home = () => {
-   
-      
+
+
 
     return (
         <div className="Home">
@@ -37,13 +36,12 @@ const Home = () => {
                                 <Link to="/Contact">Contact</Link>
                             </li>
                             <li className="nav-item active">
-                          
                                 <i className="far fa-list-alt fa-2x"></i>
                                 <Link to="/category">Category</Link>
                             </li>
                             <input className="form-control" type="text" placeholder="Search" />
 
-                            <button className="btn btn-outline-success my-2 my-sm-0">  <i className="fa fa-fw fa-search fa-5"></i> </button>
+                            <button className="btn btn-outline-success">  <i className="fa fa-fw fa-search fa-5"></i> </button>
 
                         </ul>
 
@@ -51,7 +49,7 @@ const Home = () => {
                 </nav>
 
             </div>
-            
+
 
         </div>
     )
