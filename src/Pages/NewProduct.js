@@ -40,7 +40,10 @@ const NewProduct = () => {
     }
     const handleSubmit = (e) => {
         e.preventDefault();
-        const body = { name, price, atikelnumber, category }
+        const body = {
+             name, price, atikelnumber, category 
+            
+            }
         addProductApi(body).then(res => {
             alert("submitted")
         }).catch((error) => {
@@ -56,7 +59,9 @@ const NewProduct = () => {
 
                 <select value={category} onChange={(e) => HandlechangeInput(e, "category")}>
                     <option>choise: </option>
-                    {categoryList.map(item => <option value={item._id}>{item.name}
+                    {categoryList.map((item,index) => 
+                    <option key={index} value={item._id}>
+                        {item.name}
                     </option>)
                     }
                 </select>
