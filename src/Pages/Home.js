@@ -39,6 +39,11 @@ const Home = () => {
                                 <i className="far fa-list-alt fa-2x"></i>
                                 <Link to="/category">Category</Link>
                             </li>
+                           
+                            <li className="nav-item active">
+                                <i className="fas fa-plus-circle fa-2x"></i>
+                                <Link to="/NewProduct">NewProduct</Link>
+                            </li>
                             <input className="form-control" type="text" placeholder="Search" />
 
                             <button className="btn btn-outline-success">  <i className="fa fa-fw fa-search fa-5"></i> </button>

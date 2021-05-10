@@ -12,6 +12,7 @@ import Note from "./Pages/Note"
 import Contact from "./Pages/Contact"
 import Categorylist from "./Pages/category"
 import ProductList from "./Pages/ProductList"
+import NewProduct from "./Pages/NewProduct"
 import Signup from "./Pages/Signup"
 function App() {
 
@@ -31,6 +32,8 @@ function App() {
             <Route path="/signup"><Signup/></Route>
             <Route path='/Contact'><Contact/></Route>
             <Route path='/category'><Categorylist/></Route>
+            <Route path='/NewProduct'><NewProduct/></Route>
+            
             <Route path='*'> <NotFound /> </Route>
           </Switch>
         </main>

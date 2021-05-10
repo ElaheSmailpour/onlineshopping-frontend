@@ -1,0 +1,7 @@
+.newProductPage {
+    display: flex;
+    flex-direction: column;
+ justify-content: space-around;
+ background-color: aquamarine;
+    margin: 2rem;
+}

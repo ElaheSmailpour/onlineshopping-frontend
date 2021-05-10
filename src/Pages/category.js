@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom"
-import "./styles/category.css"
+import "./styles/category.scss"
 //import { useState } from 'react';
 
 const Categorylist = () => {
 
     return (
-        <div className="container">
+        <div className="category-container">
             <nav>
                 <div className="categorylist">
                     <Link>Children</Link>
