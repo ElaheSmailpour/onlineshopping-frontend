@@ -5,70 +5,74 @@ import { useState, useEffect } from "react"
 
 const NewProduct = () => {
 
-    const [name, setName] = useState("")
-    const [price, setPrice] = useState("10")
-    const [category, setCategory] = useState("")
-    const [atikelnumber, setArtikel] = useState("")
+    const [name, setName] = useState("");
+    const [price, setPrice] = useState("10");
+    const [artikelnummer, setartikelnummer] = useState("");
+    const [category, setCategory] = useState("");
 
-    const [categoryList, setCategoryList] = useState([]);
+    const [categoryList,setCategoryList] = useState([]);
 
     useEffect(() => {
-        getCategoryList().then((res) => {
-            setCategoryList(res.data)
+        getCategoryList().then(res => {
+            setCategoryList(res.data);
+        }).catch(err => {
+            console.log(err);
         })
     }, [])
 
-
-    const HandlechangeInput = (event, key) => {
+    const handleChangeInput = (event, key) => {
         switch (key) {
             case "name":
                 setName(event.target.value)
                 break;
-
             case "price":
                 setPrice(event.target.value)
                 break;
-            case "atikelnumber":
-                setArtikel(event.target.value)
+            case "artikelnummer":
+                setartikelnummer(event.target.value)
                 break;
             case "category":
                 setCategory(event.target.value)
                 break;
-                default:
-                    console.log("Sorry, we are out of select " );
+                default : 
+                console.log("sorry addproduct")
         }
     }
-    const handleSubmit = (e) => {
-        e.preventDefault();
+
+    const handleSubmit = (e)=>{
+        e.preventDefault()
         const body = {
-             name, price, atikelnumber, category 
-            
-            }
-        addProductApi(body).then(res => {
+            name,
+            price,
+            category,
+            artikelnummer
+        }
+        addProductApi(body).then(res=>{
             alert("submitted")
-        }).catch((error) => {
-            console.log(error);
+        }).catch(err=>{
+            console.log(err);
         })
     }
-    return (
-        <div className="newProductPage">
-            <form>
-                <input type="text" placeholder="productname" value={name} onChange={(e) => HandlechangeInput(e, "name")} />
-                <input type="number" placeholder="productprice" value={price} onChange={(e) => HandlechangeInput(e, "price")} />
-                <input type="number" placeholder="productatikelnumber" value={atikelnumber} onChange={(e) => HandlechangeInput(e, "atikelnumber")} />
 
-                <select value={category} onChange={(e) => HandlechangeInput(e, "category")}>
-                    <option>choise: </option>
-                    {categoryList.map((item,index) => 
-                    <option key={index} value={item._id}>
-                        {item.name}
-                    </option>)
-                    }
+    return (
+        <div className={"newProductPage"}>
+            <form>
+                <input placeholder={"name"} value={name} onChange={(e) => handleChangeInput(e, "name")}/>
+                <input placeholder={"price"} type={"number"} value={price}
+                       onChange={(e) => handleChangeInput(e, "price")}/>
+                <input placeholder={"artikelnummer"} type={"number"} value={artikelnummer}
+                       onChange={(e) => handleChangeInput(e, "artikelnummer")}/>
+                <select placeholder={"category"} value={category} onChange={(e) => handleChangeInput(e, "category")}>
+                    <option>choise:</option>
+
+                    {categoryList.map((item,index)=>
+                    <option key={index} value={item._id}>{item.name}</option>)}
                 </select>
                 <button onClick={handleSubmit}>submit</button>
+                
             </form>
         </div>
-    )
-}
+    );
+};
 
-export default NewProduct
+export default NewProduct;
