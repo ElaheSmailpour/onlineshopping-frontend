@@ -10,31 +10,31 @@ const Categorylist = () => {
                 <div className="categorylist">
                     <Link>Children</Link>
                     <ul>
-                        <Link><li>Tshirt</li></Link>
+                        <Link><li>shirt</li></Link>
                         <Link><li>trousers</li></Link>
-                        <Link> <li>blouse</li></Link>
+                        <Link> <li>dress</li></Link>
                     </ul>
                 </div>
                 <div>
                     <Link>Women</Link>
                     <ul>
-                        <Link><li>Tshirt</li></Link>
+                        <Link><li>shirt</li></Link>
                         <Link><li>trousers</li></Link>
-                        <Link> <li>blouse</li></Link>
+                        <Link> <li>dress</li></Link>
                     </ul>
 
                 </div>
                 <div>
                     <Link>Men</Link>
                     <ul>
-                        <Link><li>Tshirt</li></Link>
+                        <Link><li>shirt</li></Link>
                         <Link><li>trousers</li></Link>
-                        <Link> <li>suit</li></Link>
+                        <Link> <li>dress</li></Link>
 
                     </ul>
                 </div>
                 <div>
-                    <Link>Acessoires</Link>
+                    <Link>Accesories</Link>
                     <ul>
                         <Link><li>Ring</li></Link>
                         <Link><li>bracelet</li></Link>
