@@ -41,14 +41,14 @@ const NewProduct = () => {
 
     const handleSubmit = (e)=>{
         e.preventDefault()
-        const body = {
+        const addproductbody = {
             name,
             price,
             category,
             artikelnummer
         }
-        addProductApi(body).then(res=>{
-            alert("submitted")
+        addProductApi(addproductbody).then(res=>{
+            alert("submitted successfully")
         }).catch(err=>{
             console.log(err);
         })
@@ -57,12 +57,12 @@ const NewProduct = () => {
     return (
         <div className={"newProductPage"}>
             <form>
-                <input placeholder={"name"} value={name} onChange={(e) => handleChangeInput(e, "name")}/>
-                <input placeholder={"price"} type={"number"} value={price}
+                <input placeholder="name" value={name} onChange={(e) => handleChangeInput(e, "name")}/>
+                <input placeholder="price" type={"number"} value={price}
                        onChange={(e) => handleChangeInput(e, "price")}/>
-                <input placeholder={"artikelnummer"} type={"number"} value={artikelnummer}
+                <input placeholder="artikelnummer" type={"number"} value={artikelnummer}
                        onChange={(e) => handleChangeInput(e, "artikelnummer")}/>
-                <select placeholder={"category"} value={category} onChange={(e) => handleChangeInput(e, "category")}>
+                <select placeholder="category" value={category} onChange={(e) => handleChangeInput(e, "category")}>
                     <option>choise:</option>
 
                     {categoryList.map((item,index)=>
