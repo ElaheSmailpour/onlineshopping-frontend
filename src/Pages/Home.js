@@ -5,7 +5,14 @@ import "./styles/home.css"
 const Home = () => {
 
 
-
+const getaccountbtn=()=>{
+    let local=localStorage.getItem("token")
+    if (local){
+        return <button onClick={()=>{localStorage.clear() ;window.location.reload()} }> logout</button>
+        
+    }
+    return  <Link to="/login">login</Link>
+}
     return (
         <div className="Home">
             <h1>Eli Shop</h1>
@@ -17,7 +24,7 @@ const Home = () => {
                             <li className="nav-item active">
 
                                 <i className="fa fa-fw fa-user fa-2x"></i>
-                                <Link to="/login">login</Link>
+                               {getaccountbtn()}
                             </li>
                             <li className="nav-item active">
                                 <Link to="/product">Product</Link>
