@@ -3,7 +3,8 @@ import {addsignupApi} from "../api/userApi"
 import { useState } from "react"
 const Signup = () => {
 
-const [gender,setGender]=useState("Male")
+const [gender,setGender]=useState([])
+
 const [name,setName]=useState("")
 const [password,setPassword]=useState("")
 const [repeatPassword,setRepeatPassword]=useState("")
