@@ -34,9 +34,9 @@ const Note = () => {
         <div className="Note">
             <h1>Note....</h1>
             <label>email:</label>
-            <input type="text" name={form.email} onchange={(e) => Handlechange(e)} />
+            <input type="text" name={"email"} value={form.email} onChange={(e) => Handlechange(e)} />
             <label>password:</label>
-            <input type="password" name={form.password} onChange={(e) => Handlechange(e)} />
+            <input type="password" name={"password"} value={form.password} onChange={(e) => Handlechange(e)} />
             <button onClick={submit}>submit</button>
         </div>
     )
