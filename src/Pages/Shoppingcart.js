@@ -10,6 +10,7 @@ const Shoppingcart = () => {
             history.push("/login")
         }
     }, [history])
+    
     return (
         <div className="Shoppingcart">
             <h1>Shoppingcart....</h1>
