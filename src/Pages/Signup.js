@@ -9,13 +9,12 @@ const Signup = () => {
         repeatPassword: "",
         email: ""
     })
-    // const [name, setName] = useState("")
-    // const [password, setPassword] = useState("")
-    // const [repeatPassword, setRepeatPassword] = useState("")
-    // const [email, setEmail] = useState("")
+ 
     const checkedgender = (event) => {
-        if (event.target.checked)
+        if (event.target.checked){
             setGender(event.target.name)
+        }
+           
     }
     const Regestrieren = (event) => {
         event.preventDefault()
@@ -52,10 +51,10 @@ const Signup = () => {
                 <br></br>
                 <input type="Radio" name="Male" label="Male" checked={gender === "Male"} onClick={(e) => checkedgender(e)} />
                 <label for="male">Male</label>
-                <input type="Radio" name={"Female"} label="Female" checked={gender === "Female"} value="Female"
+                <input type="Radio" name="Female" label="Female" checked={gender === "Female"} value="Female"
                     onClick={(e) => checkedgender(e)} />
                 <label for="female">Female</label>
-                <input type="Radio" name={"Other"} label="Other" checked={gender === "Other"}
+                <input type="Radio" name="Other" label="Other" checked={gender === "Other"}
                     onClick={(e) => checkedgender(e)} />
                 <label for="other">Other</label>
                 <div className="register">
