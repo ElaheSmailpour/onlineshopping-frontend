@@ -36,14 +36,18 @@ const Login = () => {
         setShowX(!showx)
         
     }
+    const googleAccount=()=>{
+        console.log("googleAccount")
+    }
     return (
         <div className="logincontainer" >
 
             <form className="loginform">
                 <div className="imgcontainer">
-                    {showx ?
-                    <span onclick={close} id="id01" className="close" title="Close Modal">&times;</span>
+                {showx ?
+                    <span onClick={close} id="id01" className="close">&times;</span>
                    : null}
+                    
                     <img src="../pages/images/login.png" alt="Avatar" className="avatar" />
                 </div>
                 <div className="Login">
@@ -54,12 +58,12 @@ const Login = () => {
                 </div>
                 <div className="btnlogin">
                     <button onClick={submitlogin}>Login</button>
-                    <button>login with google-konot</button>
+                    <button onClick={googleAccount}>login with google-Account</button>
 
                     <p>New User:Join Now!
-            <button><Link to="/signup">signup</Link></button>
+            <button><Link to="/signup">signup</Link></button></p>
                         <button><Link to="/">close</Link></button>
-                    </p>
+                    
                 </div>
             </form>
         </div>
