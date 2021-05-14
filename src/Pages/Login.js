@@ -8,7 +8,7 @@ const Login = () => {
         email: "",
         password: ""
     })
-    const [showx, setShowX] = useState(true)
+   
     const Handleform = (event) => {
         event.preventDefault()
         const newform = { ...form }
@@ -32,10 +32,7 @@ const Login = () => {
         })
 
     }
-    const close = () => {
-        setShowX(!showx)
-        
-    }
+   
     const googleAccount=()=>{
         console.log("googleAccount")
     }
@@ -44,9 +41,10 @@ const Login = () => {
 
             <form className="loginform">
                 <div className="imgcontainer">
-                {showx ?
-                    <span onClick={close} id="id01" className="close">&times;</span>
-                   : null}
+             
+                    <span  className="close">
+                    <Link to="/">&times;</Link></span>
+                 
                     
                     <img src="../pages/images/login.png" alt="Avatar" className="avatar" />
                 </div>
@@ -62,8 +60,7 @@ const Login = () => {
 
                     <p>New User:Join Now!
             <button><Link to="/signup">signup</Link></button></p>
-                        <button><Link to="/">close</Link></button>
-                    
+                       
                 </div>
             </form>
         </div>
