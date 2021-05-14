@@ -51,9 +51,11 @@ const getaccountbtn=()=>{
                                 <i className="fas fa-plus-circle fa-2x"></i>
                                 <Link to="/NewProduct">NewProduct</Link>
                             </li>
-                            <input className="form-control" type="text" placeholder="Search" />
+                      
 
-                            <button className="btn btn-outline-success">  <i className="fa fa-fw fa-search fa-5"></i> </button>
+                            <button className="btn btn-outline-success">  <i className="fa fa-fw fa-search fa-5"></i>
+                            <input className="form-control" type="text" placeholder="Search" />
+                             </button>
 
                         </ul>
 
