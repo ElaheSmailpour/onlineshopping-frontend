@@ -1,15 +1,15 @@
-
 import { useState } from "react"
 
 import "./styles/note.css"
 const Note = () => {
     const [showpage, setShowpage] = useState(false)
-    const [showcancel, setShowcancel] = useState(false)
+   
     const login = () => {
         setShowpage(true)
     }
     const cancel=()=>{
-        setShowcancel(true)
+       
+        setShowpage(false)
     }
     return (
 
@@ -29,10 +29,9 @@ const Note = () => {
                     <label>password:</label>
                     <input type="text" />
                     <button className="btncolor">ok</button>
-                    {!showcancel ? 
+                     
                     <button onClick={cancel} className="btncolor">cancel</button>
-                     : ""
-                     }
+                     
                 </div>
                 : null}
                 
