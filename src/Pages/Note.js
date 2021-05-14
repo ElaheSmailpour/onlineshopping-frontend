@@ -12,12 +12,18 @@ const Note = () => {
         setShowcancel(true)
     }
     return (
+
         <div className="Note">
-       
+            
+    {!showpage ? 
+    <div>
             <h1>Note....</h1>
             <label>username:</label>
             <input type="text" />
             <button onClick={login}>login</button>
+            </div>
+            : "" }
+
             {showpage ?
                 <div className="ok">
                     <label>password:</label>
@@ -29,6 +35,7 @@ const Note = () => {
                      }
                 </div>
                 : null}
+                
         </div>
     )
 }
