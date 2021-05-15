@@ -8,10 +8,12 @@ const Google = () => {
     const [url, setUrl] = useState("")
     //const history=useHistory()
     const responseGoogle = (response) => {
+       
         console.log("response=", response)
         setName(response.profileObj.name)
 
         setUrl(response.profileObj.imageUrl)
+        
         // history.push("/")
     }
     const history = useHistory()
