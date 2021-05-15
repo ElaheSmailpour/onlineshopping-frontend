@@ -35,11 +35,11 @@ function App() {
             <Route path='/Contact'><Contact/></Route>
             <Route path='/category'><Categorylist/></Route>
             <Route path='/NewProduct'><NewProduct/></Route>
-            
+            <Route path='/google'><Google/></Route>
             <Route path='*'> <NotFound /> </Route>
           </Switch>
         </main>
-        <Google/>
+       
       </div>
     </Router>
    

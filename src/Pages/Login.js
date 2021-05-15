@@ -33,9 +33,10 @@ const Login = () => {
         })
 
     }
-   
+    const historygoogle = useHistory()
     const googleAccount=()=>{
         console.log("googleAccount")
+        historygoogle.push("/google")
     }
     return (
         <div className="logincontainer" >
