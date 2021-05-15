@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 import "./styles/login.css"
 import { loginApi } from "../api/userApi.js"
 import { useHistory } from "react-router-dom";
+import pic1 from "../Pages/images/login.png"
 import { useState } from "react"
 const Login = () => {
     const [form, setForm] = useState({
@@ -41,12 +42,9 @@ const Login = () => {
 
             <form className="loginform">
                 <div className="imgcontainer">
-             
                     <span  className="close">
                     <Link to="/">&times;</Link></span>
-                 
-                    
-                    <img src="../pages/images/login.png" alt="Avatar" className="avatar" />
+                    <img src={pic1} alt="Avatar" className="avatar" />
                 </div>
                 <div className="Login">
                     <label>User Email:</label>
