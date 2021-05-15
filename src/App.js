@@ -14,6 +14,8 @@ import Categorylist from "./Pages/category"
 import ProductList from "./Pages/ProductList"
 import NewProduct from "./Pages/NewProduct"
 import Signup from "./Pages/Signup"
+
+  import  Google from "./Pages/Google"
 function App() {
 
   return (
@@ -37,9 +39,10 @@ function App() {
             <Route path='*'> <NotFound /> </Route>
           </Switch>
         </main>
-      
+        <Google/>
       </div>
     </Router>
+   
   
   );
 }
