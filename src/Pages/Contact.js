@@ -8,7 +8,7 @@ import clothes5 from "../Pages/images/clothes5.jpeg"
 const Contact = () => {
 
     return (
-        <div className="contactform">
+        <div className="contact">
             <h1 className="headercontact">Contact uns!</h1>
             <div className="contactform">
                 <p className="text">Are you a customer, seller, service provider or interested in working with Eli Shop? Please select the appropriate request and contact us by email. We look forward to your message!!</p>
@@ -19,6 +19,7 @@ const Contact = () => {
                     <img src={clothes6} alt="foto" />
                     <img src={clothes4} alt="foto" />
                 </div>
+                <div className="footercontact">
                 <footer>
                     <p>Author: Elahe Smailpour</p>
                     <p>Address: Golzheimer Strasse Düsseldorf 130</p>
@@ -31,7 +32,8 @@ const Contact = () => {
                         <a href="http://linkedin.com"><i class="fab fa-linkedin fa-2x"></i></a>
                     </p>
                 </footer>
-              <p className="backtohome"><Link to="/">Home</Link></p> 
+                </div>
+              <p className="backtohome"><Link to="/"><i class="fa fa-home">Home</i></Link></p> 
             </div>
         </div>
 

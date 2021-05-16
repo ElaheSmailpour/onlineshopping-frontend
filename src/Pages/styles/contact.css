@@ -8,7 +8,8 @@
 text-align: center;
 font-weight: bold;
 }
-.contactform{
+.contact{
+
   overflow: hidden;
 }
 .text{
@@ -17,7 +18,11 @@ font-weight: bold;
   font-weight: bold;
 }
 
-
+.footercontact{
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+}
 
   footer {
     text-align: center;
@@ -32,7 +37,7 @@ font-weight: bold;
     flex-direction: row;
     justify-content: space-around;
   }
-  img{
+  .pictures img{
   
     border: 1px solid #ddd;
   border-radius: 4px;
