@@ -1,41 +1,39 @@
 h1{
     text-align: center;
-    border: 3px rgb(211, 98, 98) solid;
+  color: rgb(24, 24, 207);
+    border: 3px rgb(194, 13, 218) solid;
+    background-color: rgb(228, 220, 224);
 }
-.container {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-    background-color: rgb(204, 223, 223);
-  }
+.contactform{
+  overflow: hidden;
+}
+.text{
+  
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: bold;
+}
 
-input[type=text], select, textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
-  }
-input[type=submit] {
-    background-color: #04AA6D;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
+
+
   footer {
-    text-align: left;
+    text-align: center;
     padding: 3px;
     background-color: DarkSalmon;
     color: white;
+    font-weight: bold;
+    margin-top:10px;
+  }
+  .pictures{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
   }
   img{
+  
     border: 1px solid #ddd;
   border-radius: 4px;
   padding: 5px;
   width: 300px;
+  height: auto;
+  box-shadow: 5px 10px #cca1c1;
   }
