@@ -1,4 +1,4 @@
-
+import {Link} from "react-router-dom"
 import '@fortawesome/fontawesome-free/css/all.min.css'
 import "./styles/contact.css"
 import clothes6 from "../Pages/images/clothes6.jpeg"
@@ -9,7 +9,7 @@ const Contact = () => {
 
     return (
         <div className="contactform">
-            <h1>Contact uns!</h1>
+            <h1 className="headercontact">Contact uns!</h1>
             <div className="contactform">
                 <p className="text">Are you a customer, seller, service provider or interested in working with Eli Shop? Please select the appropriate request and contact us by email. We look forward to your message!!</p>
                 <div className="pictures">
@@ -31,6 +31,7 @@ const Contact = () => {
                         <a href="http://linkedin.com"><i class="fab fa-linkedin fa-2x"></i></a>
                     </p>
                 </footer>
+              <p className="backtohome"><Link to="/">Home</Link></p> 
             </div>
         </div>
 
