@@ -2,7 +2,7 @@
 import '@fortawesome/fontawesome-free/css/all.min.css'
 import "./styles/contact.css"
 import clothes3 from "../Pages/images/clothes3.jpeg"
-import clothes1 from "../Pages/images/clothes1.jpeg"
+import clothes2 from "../Pages/images/clothes2.jpeg"
 import clothes4 from "../Pages/images/clothes4.jpeg"
 import clothes5 from "../Pages/images/clothes5.jpeg"
 const Contact = () => {
@@ -14,7 +14,7 @@ const Contact = () => {
             <p>Are you a customer, seller, service provider or interested in working with Eli Shop? Please select the appropriate request and contact us by email. We look forward to your message!!</p>
            <div className="pictures">
             <img src={clothes3} alt="foto"/>
-            <img src={clothes1} alt="foto"/>
+            <img src={clothes2} alt="foto"/>
             <img src={clothes5} alt="foto"/>
             <img src={clothes4} alt="foto"/>
             </div>
