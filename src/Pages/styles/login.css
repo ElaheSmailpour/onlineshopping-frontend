@@ -17,19 +17,19 @@ input[type=text], input[type=password] {
     box-sizing: border-box;
   }
   
-button{
+.btnlogin{
     background-color: #56b1d4;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
     cursor: pointer;
-    width: 100%;
+    
 }
 button:hover {
     opacity: 0.8;
   }
   img.avatar {
-    width: 40%;
+    width: 20vw;
     border-radius: 50%;
   }
   .imgcontainer {
@@ -49,4 +49,20 @@ button:hover {
     font-size: 35px;
     font-weight: bold;
   }
-  
+  .signupbtn{
+    background-color: #066661;
+    color: white;
+    padding: 15px 20px;
+    font-size: larger;
+    margin: 8px 0;
+    cursor: pointer;
+    
+  }
+  .btngooglelogin{
+    background-color: #066066;
+    color: white;
+    padding: 14px 20px;
+    font-size: larger;
+    margin: 8px 0;
+    cursor: pointer;
+  }

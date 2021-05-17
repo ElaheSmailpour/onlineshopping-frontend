@@ -17,14 +17,19 @@ const Login = () => {
         setForm(newform)
     }
     const history = useHistory()
-    const submitlogin = () => {
+    const submitlogin = (event) => {
+        event.preventDefault()
         const bodylogin = {
             email: form.email,
             password: form.password
         }
         loginApi(bodylogin).then((res) => {
             const local = res.data.token;
+            const name=res.data.name;
+            const image=res.data.image;
             localStorage.setItem("token", local)
+            localStorage.setItem("name", name)
+            localStorage.setItem("image", image)
             console.log("res=", res)
             history.push("/")
         }).catch((error) => {
@@ -53,12 +58,12 @@ const Login = () => {
                     <label>Password:</label>
                     <input type="password" name={"password"} value={form.password} onChange={(e) => Handleform(e)} />
                 </div>
-                <div className="btnlogin">
-                    <button onClick={submitlogin}>Login</button>
-                    <button onClick={googleAccount}>login with google-Account</button>
+                <div className="containerbutton">
+                    <button  className="btnlogin" onClick={submitlogin}>Login</button>
+                    <button className="btngooglelogin" onClick={googleAccount}>login with google-Account</button>
 
                     <p>New User:Join Now!
-            <button><Link to="/signup">signup</Link></button></p>
+            <button className="signupbtn"><Link to="/signup">signup</Link></button></p>
                        
                 </div>
             </form>

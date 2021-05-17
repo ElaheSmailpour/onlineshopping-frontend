@@ -1,32 +1,35 @@
-import { useState } from 'react';
+
 import { useHistory } from "react-router-dom";
 import { GoogleLogin } from 'react-google-login';
-import { GoogleLogout } from 'react-google-login';
+
+
+import {addgoogleApi} from "../api/userApi"
 const Google = () => {
-    const [name, setName] = useState("")
+   
 
-    const [url, setUrl] = useState("")
-    //const history=useHistory()
+    const history1 = useHistory()
     const responseGoogle = (response) => {
-       
-        console.log("response=", response)
-        setName(response.profileObj.name)
-
-        setUrl(response.profileObj.imageUrl)
+    
+        addgoogleApi({token:response.tokenId}).then((res)=>{
+            console.log("response=", response)
+            const local = res.data.token;
+            const name=res.data.name;
+            const image=res.data.image;
+          
+            localStorage.setItem("name", name)
+            localStorage.setItem("image", image)
+            localStorage.setItem("token", local)
+            console.log("res=", res)
+            history1.push("/")
+        })
         
         // history.push("/")
     }
-    const history = useHistory()
-    const onSuccess = () => {
-
-        alert('Logout made successfully ✌');
-        history.push("/")
-    }
+   
     return (
         <div className="Google">
             <h1>Login with Google</h1>
-            <h2>Welcome:{name}</h2>
-            <img src={url} alt={name} />
+    
             <GoogleLogin
                 clientId="828234666913-l6tv3hqml3adrbripk1l548g41sc0n1m.apps.googleusercontent.com"
                 buttonText="Login"
@@ -35,11 +38,7 @@ const Google = () => {
                 cookiePolicy={'single_host_origin'}
             />
 
-            <GoogleLogout
-                clientId="828234666913-l6tv3hqml3adrbripk1l548g41sc0n1m.apps.googleusercontent.com"
-                buttonText="Logout"
-                onLogoutSuccess={onSuccess}
-            ></GoogleLogout>
+           
 
         </div>
     )

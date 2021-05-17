@@ -1,4 +1,5 @@
 import {Link} from "react-router-dom"
+import Googlemap from '../Pages/Googlemap'
 import '@fortawesome/fontawesome-free/css/all.min.css'
 import "./styles/contact.css"
 import clothes6 from "../Pages/images/clothes6.jpeg"
@@ -35,6 +36,7 @@ const Contact = () => {
                 </div>
               <p className="backtohome"><Link to="/"><i class="fa fa-home">Home</i></Link></p> 
             </div>
+<Googlemap/>
         </div>
 
     )

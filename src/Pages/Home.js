@@ -22,9 +22,14 @@ const Home = () => {
         }
         return <Link to="/login">login</Link>
     }
+    const name=localStorage.getItem("name")
+    const image=localStorage.getItem("image")
+    console.log(name,image)
     return (
         <div className="home">
             <h1 className="headerhome">Eli Shop</h1>
+           {name && <p>welcom:{name}</p>}
+           {image &&  <img src={image} alt="foto"/>}
             <button className="btn btn-outline-success">  <i className="fa fa-fw fa-search fa-5"></i>
                 <input className="form-control" type="text" placeholder="Search" />
             </button>
