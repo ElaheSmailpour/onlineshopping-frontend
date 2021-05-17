@@ -14,7 +14,7 @@ import Categorylist from "./Pages/category"
 import ProductList from "./Pages/ProductList"
 import NewProduct from "./Pages/NewProduct"
 import Signup from "./Pages/Signup"
-
+import Signupgoogle from "./Pages/Signupgoogle"
   import  Google from "./Pages/Google"
 function App() {
 
@@ -36,6 +36,7 @@ function App() {
             <Route path='/category'><Categorylist/></Route>
             <Route path='/NewProduct'><NewProduct/></Route>
             <Route path='/google'><Google/></Route>
+            <Route path='/signupgoogle'><Signupgoogle/></Route>
             <Route path='*'> <NotFound /> </Route>
           </Switch>
         </main>

@@ -23,7 +23,7 @@ const Google = () => {
             history1.push("/")
         })
         
-        // history.push("/")
+      
     }
    
     return (

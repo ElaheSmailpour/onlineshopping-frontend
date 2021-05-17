@@ -62,8 +62,11 @@ const Login = () => {
                     <button  className="btnlogin" onClick={submitlogin}>Login</button>
                     <button className="btngooglelogin" onClick={googleAccount}>login with google-Account</button>
 
-                    <p>New User:Join Now!
+                    <p>New User:Join Now with Login!
             <button className="signupbtn"><Link to="/signup">signup</Link></button></p>
+            <p>New User:Join Now with Google-Login!
+            <button className="signupgooglebtn"><Link to="/signupgoogle">signupGoogle</Link></button></p>
+                       
                        
                 </div>
             </form>
