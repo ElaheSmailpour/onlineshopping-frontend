@@ -1,15 +1,15 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { Link } from "react-router-dom"
-import clothes8 from '../Pages/images/clothes8.jpeg'
-import clothes10 from '../Pages/images/clothes10.jpeg'
-import clothes9 from '../Pages/images/clothes9.jpeg'
-import clothes7 from '../Pages/images/clothes7.jpeg'
-import suitgirl2 from '../Pages/images/suitgirl2.jpeg'
-import suitgirl3 from '../Pages/images/suitgirl3.jpeg'
-import suitgirl6 from '../Pages/images/suitgirl6.jpeg'
-import suitgirl7 from '../Pages/images/suitgirl7.jpeg'
-import suitgirl9 from '../Pages/images/suitgirl9.jpeg'
+
+import bag2 from '../Pages/images/bag2.jpeg'
+import bag3 from '../Pages/images/bag3.jpeg'
+import bag4 from '../Pages/images/bag4.jpeg'
+import bracelet1 from '../Pages/images/bracelet1.jpeg'
+import bracelet4 from '../Pages/images/bracelet4.jpeg'
+import menshirts5 from '../Pages/images/menshirts5.jpeg'
+import childeren3 from '../Pages/images/childeren3.jpeg'
+import childeren4 from '../Pages/images/childeren4.jpeg'
 import "./styles/home.css"
 const Home = () => {
 
@@ -74,15 +74,15 @@ const Home = () => {
 
             </div>
             <div className="imagehome">
-                <img src={clothes8} alt="foto" />
-                <img src={clothes9} alt="foto" />
-                <img src={clothes7} alt="foto" />
-                <img src={clothes10} alt="foto" />
-                <img src={suitgirl3} alt="foto" />
-                <img src={suitgirl2} alt="foto" />
-                <img src={suitgirl6} alt="foto" />
-                <img src={suitgirl7} alt="foto" />
-                <img src={suitgirl9} alt="foto" />
+             
+                <img src={bag2} alt="foto" />
+                <img src={bag3} alt="foto" />
+                <img src={bag4} alt="foto" />
+                <img src={bracelet1} alt="foto" />
+                <img src={bracelet4} alt="foto" />
+                <img src={menshirts5} alt="foto" />
+                <img src={childeren3} alt="foto" />
+                <img src={childeren4} alt="foto" />
                 
             </div>
         </div>

@@ -2,10 +2,10 @@ import {Link} from "react-router-dom"
 import Googlemap from '../Pages/Googlemap'
 import '@fortawesome/fontawesome-free/css/all.min.css'
 import "./styles/contact.css"
-import clothes6 from "../Pages/images/clothes6.jpeg"
-import clothes2 from "../Pages/images/clothes2.jpeg"
-import clothes4 from "../Pages/images/clothes4.jpeg"
-import clothes5 from "../Pages/images/clothes5.jpeg"
+import menshirts2 from "../Pages/images/menshirts2.jpeg"
+import menshirts4 from "../Pages/images/menshirts4.jpeg"
+import bag8 from "../Pages/images/bag8.jpeg"
+import bracelet3 from "../Pages/images/bracelet3.jpeg"
 const Contact = () => {
 
     return (
@@ -15,10 +15,10 @@ const Contact = () => {
                 <p className="text">Are you a customer, seller, service provider or interested in working with Eli Shop? Please select the appropriate request and contact us by email. We look forward to your message!!</p>
                 <div className="pictures">
 
-                    <img src={clothes2} alt="foto" />
-                    <img src={clothes5} alt="foto" />
-                    <img src={clothes6} alt="foto" />
-                    <img src={clothes4} alt="foto" />
+                    <img src={menshirts2} alt="foto" />
+                    <img src={menshirts4} alt="foto" />
+                    <img src={bag8} alt="foto" />
+                    <img src={bracelet3} alt="foto" />
                 </div>
                 <div className="footercontact">
                 <footer>
