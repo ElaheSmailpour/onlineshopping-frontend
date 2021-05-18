@@ -30,10 +30,7 @@ const Signupgoogle = () => {
             gender:gender
         }
         addsignupgoogleApi(signupbody).then((res)=>{
-           const imagegoogle=res.data.image;
-           
-            console.log("imagegoogle=",imagegoogle)
-            localStorage.setItem("image", imagegoogle)
+          
             
             alert("signup submitted successfully")
         }).catch((error) => {
