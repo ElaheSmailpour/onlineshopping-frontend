@@ -24,14 +24,18 @@ const Home = () => {
     }
     const name=localStorage.getItem("name")
     const image=localStorage.getItem("image")
-    const image1=localStorage.getItem("imagemulter")
+   
+    console.log("name=",name)
+  
+    console.log("image=",image)
     
-    console.log(name,image)
     return (
         <div className="home">
+           
             <h1 className="headerhome">Eli Shop</h1>
+           
            {name && <p>welcom:{name}</p>}
-           {image1 &&  <img src={image1} alt="foto"/>}
+          
            {image &&  <img src={image} alt="foto"/>}
             <button className="btn btn-outline-success">  <i className="fa fa-fw fa-search fa-5"></i>
                 <input className="form-control" type="text" placeholder="Search" />

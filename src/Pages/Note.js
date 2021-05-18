@@ -18,6 +18,7 @@ const Note = () => {
     {!showpage ? 
     <div>
             <h1>Note....</h1>
+            
             <label>username:</label>
             <input type="text" />
             <button onClick={login}>login</button>
