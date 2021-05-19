@@ -40,7 +40,7 @@ const Signupgoogle = () => {
         data.append("repeatpassword", form.repeatpassword);
        data.append("image", file);
         addsignupgoogleApi(data).then((res) => {
-
+            console.log("ressignupmitgoogle=", res)
            
             alert("signup submitted successfully")
         }).catch((error) => {
