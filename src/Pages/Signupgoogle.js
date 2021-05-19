@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import { addsignupgoogleApi } from "../api/userApi"
 const Signupgoogle = () => {
     const [gender, setGender] = useState("Male")
-    const [foto, setFoto] = useState("")
+    const [file, setFile] = useState("")
     const [form, setForm] = useState({
         name: "",
         password: "",
@@ -27,12 +27,15 @@ const Signupgoogle = () => {
             email: form.email,
             password: form.password,
             repeatpassword: form.repeatpassword,
-            foto: foto,
+          file:file,
             gender: gender
         }
+        const data=new FormData()
+
+        data.append("image", file);
         addsignupgoogleApi(signupbody).then((res) => {
 
-
+           
             alert("signup submitted successfully")
         }).catch((error) => {
             console.log(error);
@@ -47,7 +50,7 @@ const Signupgoogle = () => {
     }
     const HandlechangeImage = (event) => {
         const eventimage =event.target.files[0]
-        setFoto(eventimage)
+        setFile(eventimage)
     }
     return (
         <div className="Signupgoogle">
@@ -73,7 +76,7 @@ const Signupgoogle = () => {
                 <label>RepeatPassword:</label>
                 <input type="password" name="repeatpassword" value={form.repeatpassword} onChange={(e) => Handlechange(e)} />
                 <label>Image:</label>
-                <input type="file" name="image" onChange={HandlechangeImage} />
+                <input type="file" name="image" id="files" onChange={HandlechangeImage} />
                 <button onClick={Submit}>Submit</button>
                 <p className="backtohome"><Link to="/"><i class="fa fa-home">Home</i></Link></p>
 
