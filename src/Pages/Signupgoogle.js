@@ -22,6 +22,7 @@ const Signupgoogle = () => {
             return;
 
         }
+       /*
         const signupbody = {
             name: form.name,
             email: form.email,
@@ -30,10 +31,15 @@ const Signupgoogle = () => {
           file:file,
             gender: gender
         }
+        */
         const data=new FormData()
-
-        data.append("image", file);
-        addsignupgoogleApi(signupbody).then((res) => {
+        data.append("name", form.name);
+        data.append("email", form.email);
+        data.append("password", form.password);
+        data.append("gender",gender);
+        data.append("repeatpassword", form.repeatpassword);
+       data.append("image", file);
+        addsignupgoogleApi(data).then((res) => {
 
            
             alert("signup submitted successfully")
@@ -49,8 +55,9 @@ const Signupgoogle = () => {
 
     }
     const HandlechangeImage = (event) => {
-        const eventimage =event.target.files[0]
-        setFile(eventimage)
+        const profilImage =event.target.files[0]
+        console.log("profilImage=",profilImage)
+        setFile(profilImage)
     }
     return (
         <div className="Signupgoogle">
