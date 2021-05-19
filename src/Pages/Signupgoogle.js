@@ -1,54 +1,59 @@
 import { useState } from "react"
-import {Link} from "react-router-dom"
-import {addsignupgoogleApi} from "../api/userApi"
+import { Link } from "react-router-dom"
+import { addsignupgoogleApi } from "../api/userApi"
 const Signupgoogle = () => {
-    const [gender,setGender]=useState("Male")
+    const [gender, setGender] = useState("Male")
+    const [foto, setFoto] = useState("")
     const [form, setForm] = useState({
         name: "",
         password: "",
         email: "",
-        image: ""
+
     })
     const Handlechange = (event) => {
         const newform = { ...form }
         newform[event.target.name] = event.target.value;
         setForm(newform)
     }
-    const Submit=(event)=>{
+    const Submit = (event) => {
         event.preventDefault()
-        if(form.password!== form.repeatpassword){
+        if (form.password !== form.repeatpassword) {
             alert("password is not equal repeatpassword")
             return;
 
         }
-        const signupbody={
-            name:form.name,
-            email:form.email,
-            password:form.password,
-            repeatpassword:form.repeatpassword,
-            image:form.image,
-            gender:gender
+        const signupbody = {
+            name: form.name,
+            email: form.email,
+            password: form.password,
+            repeatpassword: form.repeatpassword,
+            foto: foto,
+            gender: gender
         }
-        addsignupgoogleApi(signupbody).then((res)=>{
-          
-            
+        addsignupgoogleApi(signupbody).then((res) => {
+
+
             alert("signup submitted successfully")
         }).catch((error) => {
             console.log(error);
-        
+
         })
     }
-    const checkedgender=(event)=>{
-        if (event.target.checked){
+    const checkedgender = (event) => {
+        if (event.target.checked) {
             setGender(event.target.name)
         }
-       
+
+    }
+    const HandlechangeImage = (event) => {
+        const eventimage =event.target.files[0]
+        setFoto(eventimage)
     }
     return (
         <div className="Signupgoogle">
             <h1>Please signup now!</h1>
             <form className="signupgoogle-form" enctype="multipart/form-data">
-            <label for="gender">Gender:</label>
+                <label for="gender">Gender:</label>
                 <br></br>
                 <input type="Radio" name="Male" label="Male" checked={gender === "Male"} onClick={(e) => checkedgender(e)} />
                 <label for="male">Male</label>
@@ -68,10 +73,10 @@ const Signupgoogle = () => {
                 <label>RepeatPassword:</label>
                 <input type="password" name="repeatpassword" value={form.repeatpassword} onChange={(e) => Handlechange(e)} />
                 <label>Image:</label>
-                <input type="file" name="image" value={form.image} onChange={(e) => Handlechange(e)} />
+                <input type="file" name="image" onChange={HandlechangeImage} />
                 <button onClick={Submit}>Submit</button>
-                <p className="backtohome"><Link to="/"><i class="fa fa-home">Home</i></Link></p> 
-              
+                <p className="backtohome"><Link to="/"><i class="fa fa-home">Home</i></Link></p>
+
             </form>
         </div>
     )

@@ -6,6 +6,7 @@ import { useState, useEffect } from "react"
 const NewProduct = () => {
 
     const [name, setName] = useState("");
+    const [inventory,setInventory]=useState("")
     const [price, setPrice] = useState("10");
     const [artikelnummer, setartikelnummer] = useState("");
     const [category, setCategory] = useState("");
@@ -34,6 +35,9 @@ const NewProduct = () => {
             case "category":
                 setCategory(event.target.value)
                 break;
+                case "inventory":
+                    setInventory(event.target.value)
+                    break;
                 default : 
                 console.log("sorry addproduct")
         }
@@ -45,7 +49,8 @@ const NewProduct = () => {
             name,
             price,
             category,
-            artikelnummer
+            artikelnummer,
+            inventory
         }
         addProductApi(addproductbody).then(res=>{
             alert("submitted successfully")
@@ -57,11 +62,19 @@ const NewProduct = () => {
     return (
         <div className={"newProductPage"}>
             <form>
+                <label>Name:</label>
                 <input placeholder="name" value={name} onChange={(e) => handleChangeInput(e, "name")}/>
-                <input placeholder="price" type={"number"} value={price}
+               
+                <label>Price:</label>
+                 <input placeholder="price" type={"number"} value={price}
                        onChange={(e) => handleChangeInput(e, "price")}/>
+               <label>Artikelnummer_</label>
                 <input placeholder="artikelnummer" type={"number"} value={artikelnummer}
                        onChange={(e) => handleChangeInput(e, "artikelnummer")}/>
+              <label>Inventory:</label>
+              <input placeholder="Inventory" type={"number"} value={inventory}
+                       onChange={(e) => handleChangeInput(e, "inventory")}/>
+                       <label>Category:</label>
                 <select placeholder="category" value={category} onChange={(e) => handleChangeInput(e, "category")}>
                     <option>choise:</option>
 

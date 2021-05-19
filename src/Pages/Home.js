@@ -24,9 +24,9 @@ const Home = () => {
     }
     const name=localStorage.getItem("name")
     const image=localStorage.getItem("image")
-   const imagegoogle=localStorage.getItem("imagegoogle")
+   //const imagegoogle=localStorage.getItem("imagegoogle")
     console.log("name=",name)
-  console.log("imagegoogle=",imagegoogle)
+  //console.log("imagegoogle=",imagegoogle)
     console.log("image=",image)
     
     return (
@@ -35,7 +35,7 @@ const Home = () => {
             <h1 className="headerhome">Eli Shop</h1>
            
            {name && <p>welcom:{name}</p>}
-           {imagegoogle &&  <img src={imagegoogle} alt="imagegoogle"/>}
+        
            {image &&  <img src={image} alt="foto"/>}
             <button className="btn btn-outline-success">  <i className="fa fa-fw fa-search fa-5"></i>
                 <input className="form-control" type="text" placeholder="Search" />
