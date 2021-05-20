@@ -7,8 +7,8 @@ export const loginApi=(login)=>{
 export const addsignupApi=(signup)=>{
     return getAxios.post("/api/signup",signup)
 }
-export const addsignupgoogleApi=(signupgoogle)=>{
-    return getAxios.post("/api/signupgoogle",signupgoogle)
+export const addsignupgoogleApi=(signup)=>{
+    return getAxios.post("/api/signup",signup)
 }
 
 export const addgoogleApi=(google)=>{
