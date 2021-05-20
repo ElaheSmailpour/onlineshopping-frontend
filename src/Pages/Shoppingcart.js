@@ -1,7 +1,8 @@
-import { useEffect } from "react"
-import { useHistory } from "react-router-dom";
+//import { useEffect } from "react"
+//import { useHistory } from "react-router-dom";
 
 const Shoppingcart = () => {
+  /*
     const history = useHistory()
     useEffect(() => {
         let local = localStorage.getItem("token")
@@ -10,7 +11,7 @@ const Shoppingcart = () => {
             history.push("/login")
         }
     }, [history])
-    
+    */
     return (
         <div className="Shoppingcart">
             <h1>Shoppingcart....</h1>

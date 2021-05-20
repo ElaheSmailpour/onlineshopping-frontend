@@ -1,9 +1,12 @@
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Redirect
+
 
 } from "react-router-dom";
+import React from "react"
 import Login from "./Pages/Login"
 import Home from "./Pages/Home"
 import NotFound from "./Pages/NotFound"
@@ -13,7 +16,6 @@ import Contact from "./Pages/Contact"
 import Categorylist from "./Pages/category"
 import ProductList from "./Pages/ProductList"
 import NewProduct from "./Pages/NewProduct"
-import Signup from "./Pages/Signup"
 import Signupgoogle from "./Pages/Signupgoogle"
   import  Google from "./Pages/Google"
 function App() {
@@ -28,15 +30,15 @@ function App() {
 
             <Route exact path='/'><Home /></Route>
             <Route path='/login'><Login /></Route>
-            <Route path="/shoppingcart"><Shoppingcart /></Route>
+            <PrivateRoute path="/shoppingcart" Component={Shoppingcart}/>
             <Route path='/product'><ProductList /></Route>
             <Route path='/note'><Note/></Route>
-            <Route path="/signup"><Signup/></Route>
+         
             <Route path='/Contact'><Contact/></Route>
             <Route path='/category'><Categorylist/></Route>
             <Route path='/NewProduct'><NewProduct/></Route>
             <Route path='/google'><Google/></Route>
-            <Route path='/signupgoogle'><Signupgoogle/></Route>
+            <Route path='/signup'><Signupgoogle/></Route>
             <Route path='*'> <NotFound /> </Route>
           </Switch>
         </main>
@@ -49,3 +51,13 @@ function App() {
 }
 
 export default App;
+
+const isAuth = () => !!localStorage.getItem("token");
+const PrivateRoute = ({Component,...props}) => {
+    return <Route {...props} render={() => {
+      // if token ist da  bestimmte componet render
+        if (isAuth())
+            return React.createElement(Component)
+        else return <Redirect to={"/login"}/>
+    }}/>
+}

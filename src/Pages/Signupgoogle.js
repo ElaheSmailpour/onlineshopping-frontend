@@ -1,4 +1,8 @@
 import { useState } from "react"
+import { useHistory } from "react-router-dom";
+import { GoogleLogin } from 'react-google-login';
+
+import {addsignupgoogle1Api} from "../api/userApi"
 import { Link } from "react-router-dom"
 import { addsignupgoogleApi } from "../api/userApi"
 const Signupgoogle = () => {
@@ -22,16 +26,7 @@ const Signupgoogle = () => {
             return;
 
         }
-       /*
-        const signupbody = {
-            name: form.name,
-            email: form.email,
-            password: form.password,
-            repeatpassword: form.repeatpassword,
-          file:file,
-            gender: gender
-        }
-        */
+      
         const data=new FormData()
         data.append("name", form.name);
         data.append("email", form.email);
@@ -58,6 +53,25 @@ const Signupgoogle = () => {
         const profilImage =event.target.files[0]
         console.log("profilImage=",profilImage)
         setFile(profilImage)
+    }
+
+    const history1 = useHistory()
+    const responseGoogle = (response) => {
+    
+        addsignupgoogle1Api({token:response.tokenId}).then((res)=>{
+            console.log("response=", response)
+            const local = res.data.token;
+            const name=res.data.name;
+            const image=res.data.image;
+          
+            localStorage.setItem("name", name)
+            localStorage.setItem("image", image)
+            localStorage.setItem("token", local)
+            console.log("res=", res)
+            history1.push("/")
+        })
+        
+      
     }
     return (
         <div className="Signupgoogle">
@@ -87,7 +101,17 @@ const Signupgoogle = () => {
                 <button onClick={Submit}>Submit</button>
                 <p className="backtohome"><Link to="/"><i class="fa fa-home">Home</i></Link></p>
 
+
             </form>
+         
+            <GoogleLogin
+                clientId="828234666913-l6tv3hqml3adrbripk1l548g41sc0n1m.apps.googleusercontent.com"
+                buttonText="Login"
+                onSuccess={responseGoogle}
+                onFailure={responseGoogle}
+                cookiePolicy={'single_host_origin'}
+            />
+
         </div>
     )
 }

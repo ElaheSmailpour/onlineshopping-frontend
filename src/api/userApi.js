@@ -14,3 +14,8 @@ export const addsignupgoogleApi=(signupgoogle)=>{
 export const addgoogleApi=(google)=>{
     return getAxios.post("/api/auth/google",google)
 }
+
+
+export const addsignupgoogle1Api=(google)=>{
+    return getAxios.post("/api/signupgoogle1",google)
+}
