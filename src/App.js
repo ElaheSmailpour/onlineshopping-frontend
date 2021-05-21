@@ -7,6 +7,7 @@ import {
 
 } from "react-router-dom";
 import React from "react"
+
 import Login from "./Pages/Login"
 import Home from "./Pages/Home"
 import NotFound from "./Pages/NotFound"
@@ -18,6 +19,7 @@ import ProductList from "./Pages/ProductList"
 import NewProduct from "./Pages/NewProduct"
 import Signupgoogle from "./Pages/Signupgoogle"
   import  Google from "./Pages/Google"
+  import Bagwomen from "./Pages/Bagwomen"
 function App() {
 
   return (
@@ -39,14 +41,17 @@ function App() {
             <Route path='/NewProduct'><NewProduct/></Route>
             <Route path='/google'><Google/></Route>
             <Route path='/signup'><Signupgoogle/></Route>
+            <Route path='/bagwomen'><Bagwomen/></Route>
+            
             <Route path='*'> <NotFound /> </Route>
           </Switch>
         </main>
        
       </div>
+    
     </Router>
    
-  
+ 
   );
 }
 

@@ -2,7 +2,7 @@
 import { useHistory } from "react-router-dom";
 import { GoogleLogin } from 'react-google-login';
 
-
+import React from 'react';
 import {addgoogleApi} from "../api/userApi"
 const Google = () => {
    

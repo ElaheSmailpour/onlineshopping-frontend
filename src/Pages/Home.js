@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { Link } from "react-router-dom"
-
+import React from 'react';
 import bag2 from '../Pages/images/bag2.jpeg'
 import bag3 from '../Pages/images/bag3.jpeg'
 import bag4 from '../Pages/images/bag4.jpeg'

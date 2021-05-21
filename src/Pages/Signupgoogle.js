@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useHistory } from "react-router-dom";
 import { GoogleLogin } from 'react-google-login';
-
+import React from 'react';
 import {addsignupgoogle1Api} from "../api/userApi"
 import { Link } from "react-router-dom"
 import { addsignupgoogleApi } from "../api/userApi"

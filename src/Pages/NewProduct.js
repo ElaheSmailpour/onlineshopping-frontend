@@ -1,7 +1,7 @@
 import { addProductApi, getCategoryList } from "../api/productApi"
 import "./styles/addproduct.css"
 import { useState, useEffect } from "react"
-
+import React from 'react';
 
 const NewProduct = () => {
 

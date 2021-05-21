@@ -2,6 +2,7 @@ import {Link} from "react-router-dom"
 import Googlemap from '../Pages/Googlemap'
 import '@fortawesome/fontawesome-free/css/all.min.css'
 import "./styles/contact.css"
+import React from 'react';
 import menshirts2 from "../Pages/images/menshirts2.jpeg"
 import menshirts4 from "../Pages/images/menshirts4.jpeg"
 import bag8 from "../Pages/images/bag8.jpeg"

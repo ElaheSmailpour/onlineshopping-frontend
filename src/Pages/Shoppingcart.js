@@ -1,6 +1,6 @@
 //import { useEffect } from "react"
 //import { useHistory } from "react-router-dom";
-
+import React from 'react';
 const Shoppingcart = () => {
   /*
     const history = useHistory()
