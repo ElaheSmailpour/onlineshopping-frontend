@@ -16,9 +16,9 @@ const Bagwomen = () => {
             console.log("responsebag=",response.data)
         }).catch(err => {
             console.log("error axios bagwomen=",err)
+            console.log(err)
         })
     }, [])
-    
     
     return (
         <div className="Bagwomencontainer">

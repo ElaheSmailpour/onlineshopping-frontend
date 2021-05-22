@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {getProductList} from "../api/productApi";
+import {getProductList} from "../api/productApi"
 import ProductItem from "./ProductItem";
 
 const ProductList = () => {
@@ -9,7 +9,9 @@ const ProductList = () => {
     useEffect(() => {
         getProductList().then(response => {
             setProducts(response.data);
+            console.log("response=",response.data)
         }).catch(err => {
+            console.log("error axios getproduct=",err)
             console.log(err)
         })
     }, [])
