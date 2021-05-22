@@ -3,6 +3,7 @@ import bag1 from "../Pages/images/bag1.jpg"
 import React from "react"
 import Bagwomen from "../Pages/Bagwomen"
 const ImageCards = () => {
+
     return (
         <div className="container-fluid d-flex jusify-content-center">
             <div className="row">

@@ -7,6 +7,14 @@ export const getCategoryList = ()=>{
     return getAxios.get("/category")
 }
 
+
+
+export const getselectproduct = (cat)=>{
+    
+    return getAxios.get(`/select/${cat}`)
+}
+
+
 export const addProductApi=(product)=>{
     return getAxios.post("/product",product)
 }

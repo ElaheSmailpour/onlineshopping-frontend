@@ -1,15 +1,15 @@
 import React from 'react';
 
-const ProductItem = ({productName,productPrice}) => {
-   
-   
+const ProductItem = ({ productName, productPrice}) => {
+
+
     return (
-     <div className="ProductItem">
+        <div className="ProductItem">
             <p>{productName}</p>
             <p>{productPrice}</p>
-            </div>
-        
-        
+        </div>
+
+
     );
 };
 
