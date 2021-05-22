@@ -15,7 +15,7 @@ const Bagwomen = () => {
             setProducts(response.data);
             console.log("responsebag=",response.data)
         }).catch(err => {
-            console.log(err)
+            console.log("error axios bagwomen=",err)
         })
     }, [])
     

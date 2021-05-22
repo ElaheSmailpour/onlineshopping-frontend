@@ -23,9 +23,6 @@ const ProductList = () => {
                 <ProductItem productName={item.name} 
                                                            
                 productPrice={item.price}
-            
-             
-                
               
                 />
                  </li>
