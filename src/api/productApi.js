@@ -10,8 +10,9 @@ export const getCategoryList = ()=>{
 
 
 export const getselectproduct = (cat)=>{
-    
-    return getAxios.get(`/select/${cat}`)
+   
+   return getAxios.get(`/select/${cat}`)
+    //return getAxios.get(`/product`,{params:{category:cat}})
 }
 
 
