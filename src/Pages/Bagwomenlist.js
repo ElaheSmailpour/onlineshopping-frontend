@@ -1,12 +1,12 @@
 import React from "react"
 
-const Bagwomenlist = ({ productName}) => {
+const Bagwomenlist = ({ productprice,productimage}) => {
 
 
     return (
         <div className="Bagwomenlist">
-            
-            <p>{productName}</p>
+            <img className="Bagwomenimage" src={productimage} alt="Foto"/>
+            <p>{productprice}</p>
            
         </div>
         

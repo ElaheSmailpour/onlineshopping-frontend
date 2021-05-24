@@ -58,12 +58,12 @@ const Categorylist = () => {
 
             </nav>
             <div className="picturescategorycontainer">
-<div className="picturescategory">
-                <img src={menshirts2} alt="foto" />
-                <img src={menshirts4} alt="foto" />
-                <img src={bag8} alt="foto" />
-                <img src={bracelet3} alt="foto" />
-            </div>
+                <div className="picturescategory">
+                    <img src={menshirts2} alt="foto" />
+                    <img src={menshirts4} alt="foto" />
+                    <img src={bag8} alt="foto" />
+                    <img src={bracelet3} alt="foto" />
+                </div>
             </div>
             <Link to="/"> <li>Back to Home</li></Link>
         </div>
