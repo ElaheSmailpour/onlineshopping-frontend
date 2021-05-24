@@ -21,7 +21,7 @@ const ProductDetails = () => {
         <div className="ProductDetails">
             <div className="detail">
                 {data.image && <img className="image" src={data.image} alt="Foto" />}
-                <p>{data.price}</p>
+                <p>price:{data.price}</p>
                 <p>artikelnummer:{data.artikelnummer}</p>
             </div>
             <label for="selectbagwomen">conut:</label>

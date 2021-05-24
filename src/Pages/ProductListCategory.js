@@ -1,7 +1,7 @@
 import "../Pages/styles/bagwomen.css"
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { useEffect, useState } from 'react';
-import {useParams} from "react-router-dom"
+import { useParams } from "react-router-dom"
 import { getselectproduct } from "../api/productApi";
 import ProductItemCategory from "./ProductItemCategory"
 //import bag1 from "../Pages/images/bag1.jpg"
@@ -10,21 +10,21 @@ import React from "react"
 const ProductListCategory = () => {
 
     const [products, setProducts] = useState([])
-const params=useParams()
-console.log("params=",params)
+    const params = useParams()
+    console.log("params=", params)
     useEffect(() => {
         getselectproduct(params.cat).then(response => {
             setProducts(response.data);
             console.log("responsebag=", response.data)
         }).catch(err => {
-            console.log("error axios bagwomen=", err)
+            console.log("error axios ProductListCategory=", err)
             console.log(err)
         })
     }, [])
 
     return (
-        <div className="Bagwomencontainer">
-             
+        <div className="ProductListCategorycontainer">
+
             <ul>
                 {products.map((item, index) =>
                     <li key={index}>
@@ -36,7 +36,7 @@ console.log("params=",params)
                 )}
 
             </ul>
-           
+
         </div>
     )
 }
