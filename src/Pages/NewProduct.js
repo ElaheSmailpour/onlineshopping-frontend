@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import React from 'react';
 
 const NewProduct = () => {
-
+    const [file, setFile] = useState("")
     const [name, setName] = useState("");
     const [inventory,setInventory]=useState("")
     const [price, setPrice] = useState("10");
@@ -38,6 +38,9 @@ const NewProduct = () => {
                 case "inventory":
                     setInventory(event.target.value)
                     break;
+                    case "file":
+                        setFile(event.target.value)
+                        break;
                 default : 
                 console.log("sorry addproduct")
         }
@@ -45,20 +48,35 @@ const NewProduct = () => {
 
     const handleSubmit = (e)=>{
         e.preventDefault()
-        const addproductbody = {
+
+        const data=new FormData()
+        data.append("name", name);
+        data.append("price", price);
+        data.append("category", category);
+        data.append("artikelnummer",artikelnummer);
+        data.append("inventory", inventory);
+       data.append("image", file);
+       /* 
+       const addproductbody = {
             name,
             price,
             category,
             artikelnummer,
-            inventory
+            inventory,
+            image:file
         }
-        addProductApi(addproductbody).then(res=>{
+        */
+        addProductApi(data).then(res=>{
             alert("submitted successfully")
         }).catch(err=>{
             console.log(err);
         })
     }
-
+const HandlechangeImage=(event)=>{
+    const profilImage =event.target.files[0]
+    console.log("profilImage=",profilImage)
+    setFile(profilImage)
+}
     return (
         <div className={"newProductPage"}>
             <form>
@@ -74,6 +92,10 @@ const NewProduct = () => {
               <label>Inventory:</label>
               <input placeholder="Inventory" type={"number"} value={inventory}
                        onChange={(e) => handleChangeInput(e, "inventory")}/>
+                       <br></br>
+                       <label>Image:</label>
+                       <input type="file" name="image" id="files" onChange={HandlechangeImage} />
+                       <br></br>
                        <label>Category:</label>
                 <select placeholder="category" value={category} onChange={(e) => handleChangeInput(e, "category")}>
                     <option>choise:</option>
