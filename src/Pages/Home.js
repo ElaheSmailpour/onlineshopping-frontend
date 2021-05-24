@@ -55,7 +55,6 @@ const Home = () => {
                             </li>
                             <li className="nav-item active">
                                 <i className="fas fa-shopping-cart fa-2x"></i>
-                                <Link to="/shoppingcart">cart</Link>
 
                             </li>
                             <li className="nav-item active">

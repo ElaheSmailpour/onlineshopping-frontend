@@ -40,7 +40,7 @@ const Categorylist = () => {
                 <div>
                     <Link>Accesories</Link>
                     <ul>
-                        <Link><li>Ring</li></Link>
+                        <Link to="/ProductListCategory/60994aca5c079d1905146394"><li>Ring</li></Link>
                         <Link><li>bracelet</li></Link>
 
 
@@ -49,7 +49,7 @@ const Categorylist = () => {
                 <div>
                     <Link>Bag</Link>
                     <ul>
-                        <Link to="/bagwomen"><li>Women</li></Link>
+                        <Link to="/ProductListCategory/60a4a61e318a3c21e32494a8"><li>Women</li></Link>
 
                         <Link> <li>Men</li></Link>
 

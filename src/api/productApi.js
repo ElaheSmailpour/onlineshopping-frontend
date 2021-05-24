@@ -11,10 +11,22 @@ export const getCategoryList = ()=>{
 
 export const getselectproduct = (cat)=>{
    
-  // return getAxios.get(`/select/${cat}`)
-    return getAxios.get(`/product`,{params:{category:"Bag"}})
+//  return getAxios.get(`/product/${cat}`)
+//or
+return getAxios.get(`/product/`+ cat)
+   
 }
-
+export const getproductdetails = (productid)=>{
+   
+   
+    return getAxios.get(`/product/details/`+ productid)
+       
+    }
+    
+    export const getnote = ()=>{
+        return getAxios.get(`/note`)
+           
+        }
 
 export const addProductApi=(product)=>{
     return getAxios.post("/product",product)

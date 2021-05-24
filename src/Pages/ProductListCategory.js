@@ -1,17 +1,19 @@
 import "../Pages/styles/bagwomen.css"
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { useEffect, useState } from 'react';
+import {useParams} from "react-router-dom"
 import { getselectproduct } from "../api/productApi";
-import Bagwomenlist from "../Pages/Bagwomenlist"
+import ProductItemCategory from "./ProductItemCategory"
 //import bag1 from "../Pages/images/bag1.jpg"
 import React from "react"
 
-const Bagwomen = () => {
+const ProductListCategory = () => {
 
     const [products, setProducts] = useState([])
-
+const params=useParams()
+console.log("params=",params)
     useEffect(() => {
-        getselectproduct().then(response => {
+        getselectproduct(params.cat).then(response => {
             setProducts(response.data);
             console.log("responsebag=", response.data)
         }).catch(err => {
@@ -26,9 +28,9 @@ const Bagwomen = () => {
             <ul>
                 {products.map((item, index) =>
                     <li key={index}>
-                        <Bagwomenlist productimage={item.image}
+                        <ProductItemCategory productimage={item.image}
                             productprice={item.price}
-
+                            productid={item._id}
                         />
                     </li>
                 )}
@@ -39,4 +41,4 @@ const Bagwomen = () => {
     )
 }
 
-export default Bagwomen
+export default ProductListCategory
