@@ -21,6 +21,7 @@ const Contact = () => {
                     <img src={bag8} alt="foto" />
                     <img src={bracelet3} alt="foto" />
                 </div>
+              
                 <div className="footercontact">
                 <footer>
                     <p>Author: Elahe Smailpour</p>

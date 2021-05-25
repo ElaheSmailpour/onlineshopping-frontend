@@ -28,6 +28,8 @@ const Note = () => {
                             productprice={item.price}
                             noteremove={true}
                             productid={item._id}
+                         
+                        
                         />
                     </li>
                 )}

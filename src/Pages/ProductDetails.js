@@ -33,8 +33,9 @@ const ProductDetails = () => {
         <div className="ProductDetails">
             <div className="detail">
                 {data.image && <img className="image" src={data.image} alt="Foto" />}
-                <p>price:{data.price}</p>
+                <p>Title:{data.name}</p>
                 <p>artikelnummer:{data.artikelnummer}</p>
+                <p>price:{data.price}</p>
             </div>
             <label for="selectbagwomen">conut:</label>
             <select className="selectbagwomen">
@@ -44,8 +45,8 @@ const ProductDetails = () => {
                 <option>4</option>
                 <option>5</option>
             </select>
-            <button><i className="fas fa-shopping-cart fa-2x"></i>Go to cart</button>
-            <button onClick={note}><i className="far fa-heart fa-2x"></i>Go to Note</button>
+            <button><i className="fas fa-shopping-cart fa-2x"></i>Add to cart</button>
+            <button onClick={note}><i className="far fa-heart fa-2x"></i>Add to Note</button>
         </div>
     )
 

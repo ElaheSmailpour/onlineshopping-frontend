@@ -2,14 +2,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { Link } from "react-router-dom"
 import React from 'react';
-import bag2 from '../Pages/images/bag2.jpeg'
-import bag3 from '../Pages/images/bag3.jpeg'
-import bag4 from '../Pages/images/bag4.jpeg'
-import bracelet1 from '../Pages/images/bracelet1.jpeg'
-import bracelet4 from '../Pages/images/bracelet4.jpeg'
-import menshirts5 from '../Pages/images/menshirts5.jpeg'
-import childeren3 from '../Pages/images/childeren3.jpeg'
-import childeren4 from '../Pages/images/childeren4.jpeg'
+import bag2 from "../Pages/images/bag2.jpeg"
+import bracelet5 from "../Pages/images/bracelet5.jpeg"
+import { Button, Card } from "react-bootstrap"
+
 import "./styles/home.css"
 const Home = () => {
 
@@ -81,15 +77,28 @@ const Home = () => {
 
             </div>
             <div className="imagehome">
-             
-                <img src={bag2} alt="foto" />
-                <img src={bag3} alt="foto" />
-                <img src={bag4} alt="foto" />
-                <img src={bracelet1} alt="foto" />
-                <img src={bracelet4} alt="foto" />
-                <img src={menshirts5} alt="foto" />
-                <img src={childeren3} alt="foto" />
-                <img src={childeren4} alt="foto" />
+            <Card style={{ width: '18rem' }}>
+                <Card.Img variant="top" src={bag2} />
+                <Card.Body>
+                    <Card.Title>Card Title</Card.Title>
+                    <Card.Text>
+                        Some quick example text to build on the card title and make up the bulk of
+                        the card's content.
+    </Card.Text>
+                    <Button variant="primary">Go Bag</Button>
+                </Card.Body>
+            </Card>
+            <Card style={{ width: '18rem' }}>
+                <Card.Img variant="top" src={bracelet5} />
+                <Card.Body>
+                    <Card.Title>Card Title</Card.Title>
+                    <Card.Text>
+                        Some quick example text to build on the card title and make up the bulk of
+                        the card's content.
+    </Card.Text>
+                    <Button variant="primary">Go Bag</Button>
+                </Card.Body>
+            </Card>
                 
             </div>
         </div>
