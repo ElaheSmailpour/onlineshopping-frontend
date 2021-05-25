@@ -78,9 +78,9 @@ const Home = () => {
             </div>
             <div className="imagehome">
             <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={bag2} />
+             <Link to ="/category"> <Card.Img variant="top" src={bag2} /></Link>  
                 <Card.Body>
-                    <Card.Title>Card Title</Card.Title>
+                    <Card.Title>Bag</Card.Title>
                     <Card.Text>
                         Some quick example text to build on the card title and make up the bulk of
                         the card's content.
@@ -89,9 +89,9 @@ const Home = () => {
                 </Card.Body>
             </Card>
             <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={bracelet5} />
+            <Link to ="/category">  <Card.Img variant="top" src={bracelet5} /></Link> 
                 <Card.Body>
-                    <Card.Title>Card Title</Card.Title>
+                    <Card.Title>bracelet5</Card.Title>
                     <Card.Text>
                         Some quick example text to build on the card title and make up the bulk of
                         the card's content.
