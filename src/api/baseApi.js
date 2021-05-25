@@ -10,4 +10,4 @@ const getAxios = () => {
     })
 }
 
-export default getAxios();
+export default getAxios;

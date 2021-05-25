@@ -7,6 +7,7 @@ import {
 
 } from "react-router-dom";
 import React from "react"
+//import Test from "./Pages/Test"
 import ProductDetails from './Pages/ProductDetails'
 import Login from "./Pages/Login"
 import Home from "./Pages/Home"
@@ -43,10 +44,10 @@ function App() {
             <Route path='/signup'><Signupgoogle/></Route>
             <Route path='/ProductListCategory/:cat'><ProductListCategory/></Route>
             <Route path='/productdetails/:id'><ProductDetails/></Route>
-            <Route path='*'> <NotFound /> </Route>
+            <Route path='*'><NotFound /> </Route>
           </Switch>
         </main>
-       
+      
       </div>
     
     </Router>
@@ -60,7 +61,7 @@ export default App;
 const isAuth = () => !!localStorage.getItem("token");
 const PrivateRoute = ({Component,...props}) => {
     return <Route {...props} render={() => {
-      // if token ist da  bestimmte componet render
+      // if token ist da  bestimmte component rendern
         if (isAuth())
             return React.createElement(Component)
         else return <Redirect to={"/login"}/>
