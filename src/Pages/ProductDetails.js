@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { getproductdetails } from "../api/productApi"
 import { useHistory } from "react-router-dom"
 import { addcartpost } from "../api/productApi"
+import "../Pages/styles/productdetails.css"
 const ProductDetails = () => {
     const params = useParams()
     const [data, setData] = useState("")
@@ -45,9 +46,9 @@ const ProductDetails = () => {
         setProductcount(event.target.value)
     }
     return (
-        <div className="ProductDetails">
+        <div className="ProductDetailscontainer">
             <div className="detail">
-                {data.image && <img className="image" src={data.image} alt="Foto" />}
+                {data.image && <img className="ProductDetailImage" src={data.image} alt="Foto" />}
                 <p>Title:{data.name}</p>
                 <p>artikelnummer:{data.artikelnummer}</p>
                 <p>price:{data.price}</p>

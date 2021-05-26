@@ -1,0 +1,19 @@
+.ProductDetailscontainer{
+   
+    border: 3px blue solid;
+}
+.detail{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   
+}
+.ProductDetailImage{
+    width: 50%;
+}
+.detail p{
+    text-align: center;
+    font-weight: bold;
+    color: rgb(22, 22, 21);
+    padding: 5px;
+}
