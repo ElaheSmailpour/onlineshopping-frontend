@@ -31,6 +31,14 @@ export const createnote = (productid) => {
     return getAxios().get(`/note/${productid}`)
 
 }
+export const addcartpost = (productid,count) => {
+    return getAxios().post(`/addcart`,{productid,count})
+
+}
+export const getcart = () => {
+    return getAxios().get(`/addcart`)
+
+}
 export const removenote = (productid) => {
     return getAxios().delete(`/note/${productid}`)
 

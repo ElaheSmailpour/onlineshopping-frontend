@@ -2,11 +2,11 @@ import React from "react"
 import { removenote } from "../api/productApi"
 import "../Pages/styles/ProductItemCategory.css"
 import { Link } from "react-router-dom"
-const ProductItemCategory = ({ productprice, productimage, productid, noteremove }) => {
+const ProductItemCategory = ({ productprice, productimage, productid, noteremove,updatedata,countporduct }) => {
 
     const remove = () => {
         removenote(productid).then((res) => {
-            alert("delete")
+            updatedata()
         }).catch(err => {
             console.log("error axios ProductListCategory=", err)
             console.log(err)
@@ -14,20 +14,20 @@ const ProductItemCategory = ({ productprice, productimage, productid, noteremove
     }
     return (
         <div className="ProductItemCategory">
-            <Link to={`/productdetails/${productid}`} className="productdetails">
+           <div  className="productdetails">
 
 
                 
                 <div className="productcontainer">
                   
-                    <div className="productimage">
+                    <Link to={`/productdetails/${productid}`} className="productimage">
                         <img className="productdetailsimage" src={productimage} alt="Foto" />
-                    </div>
+                    </Link>
                   
                     <p>price:{productprice}</p>
-
+<p>conut:{countporduct}</p>
                 </div>
-            </Link>
+            </div>
             {noteremove && <button onClick={remove}>[X]</button>}
         </div>
 

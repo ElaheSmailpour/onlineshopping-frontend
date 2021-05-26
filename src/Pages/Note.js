@@ -8,6 +8,11 @@ import ProductItemCategory from './ProductItemCategory';
 const Note = () => {
     const [data, setData] = useState([])
     useEffect(() => {
+       readdata()
+
+    }, [])
+
+    const readdata=()=>{
         getnote().then((res) => {
             console.log("data",res.data)
             setData(res.data)
@@ -15,9 +20,7 @@ const Note = () => {
             console.log("error axios ProductDetails=", err)
             console.log(err)
         })
-
-    }, [])
-
+    }
     return (
 
         <div className="Note">
@@ -28,7 +31,7 @@ const Note = () => {
                             productprice={item.price}
                             noteremove={true}
                             productid={item._id}
-                         
+                            updatedata={readdata}
                         
                         />
                     </li>
