@@ -1,6 +1,11 @@
 
+.ProductListCategoryLi{
+   
+    border:  3px red solid;
+   
+}
 .ProductListCategoryUl{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-around;
 }

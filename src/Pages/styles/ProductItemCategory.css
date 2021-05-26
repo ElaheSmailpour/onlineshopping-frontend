@@ -1,24 +1,9 @@
-.ProductItemCategory{
-    
-    border: 3px rgb(199, 12, 115) solid;
+.productdetailsimage{
+    width: 100%;
 }
-.productcontainer{
- 
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  
-    
-}
-.productimage{
-    padding: 5px;
-}
-
 .ProductItemCategoryText{
-    font-weight: bold;
     text-align: center;
-    font-size:larger;
-    margin: 5px;
-    padding: 10px;
-    color: rgb(10, 10, 10);
+    font-weight: bold;
+    color: rgb(54, 182, 29);
+    padding: 5px;
 }

@@ -13,6 +13,7 @@ const ProductItemCategory = ({ productprice, productimage, productid, noteremove
         })
     }
     return (
+        
         <div className="ProductItemCategory">
           
                 <div className="productcontainer">
@@ -20,6 +21,7 @@ const ProductItemCategory = ({ productprice, productimage, productid, noteremove
                     <Link to={`/productdetails/${productid}`} className="productimage">
                         <img className="productdetailsimage" src={productimage} alt="Foto" />
                     </Link>
+                    
                     <div className="ProductItemCategoryText">
                     <p>conut:{countporduct}</p>
                     <p>price:{productprice}</p>
