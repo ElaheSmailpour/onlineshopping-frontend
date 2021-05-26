@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom"
 import { getselectproduct } from "../api/productApi";
 import ProductItemCategory from "./ProductItemCategory"
-
+import "../Pages/styles/productListCategory.css"
 import React from "react"
 
 const ProductListCategory = () => {
@@ -25,9 +25,9 @@ const ProductListCategory = () => {
     return (
         <div className="ProductListCategorycontainer">
 
-            <ul>
+            <ul className="ProductListCategoryUl">
                 {products.map((item, index) =>
-                    <li key={index}>
+                    <li className="ProductListCategoryLi" key={index}>
                         <ProductItemCategory productimage={item.image}
                             productprice={item.price}
                             productid={item._id}

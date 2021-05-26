@@ -44,7 +44,9 @@ const Categorylist = () => {
 
             </nav>
 
-
+            <button className="btn btn-outline-success">  <i className="fa fa-fw fa-search fa-5"></i>
+                <input className="form-control" type="text" placeholder="Search" />
+            </button>
             <Link to="/"> <li>Back to Home</li></Link>
         </div>
 

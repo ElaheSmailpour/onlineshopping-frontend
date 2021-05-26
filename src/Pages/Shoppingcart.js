@@ -26,7 +26,7 @@ const Shoppingcart = () => {
     return (
         <div className="Shoppingcart">
             <h1>Shoppingcart....</h1>
-            <ul>
+            <ul className="productshoppingcart">
                 {data.map((item, index) =>
                     <li key={index}>
                         <ProductItemCategory productimage={item.product.image}

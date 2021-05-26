@@ -33,9 +33,7 @@ const Home = () => {
            {name && <p>welcom:{name}</p>}
         
            {image &&  <img src={image} alt="foto"/>}
-            <button className="btn btn-outline-success">  <i className="fa fa-fw fa-search fa-5"></i>
-                <input className="form-control" type="text" placeholder="Search" />
-            </button>
+           
             <div className="navbarhome">
                 <nav className="navbar navbar-expand-lg navbar-light  bg-light">
 
