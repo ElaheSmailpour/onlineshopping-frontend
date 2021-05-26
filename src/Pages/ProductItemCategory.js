@@ -15,6 +15,9 @@ const ProductItemCategory = ({ productprice, productimage, productid, noteremove
     return (
         <div className="ProductItemCategory">
             <Link to={`/productdetails/${productid}`} className="productdetails">
+
+
+                
                 <div className="productcontainer">
                   
                     <div className="productimage">

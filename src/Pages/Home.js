@@ -78,25 +78,25 @@ const Home = () => {
             </div>
             <div className="imagehome">
             <Card style={{ width: '18rem' }}>
-             <Link to ="/category"> <Card.Img variant="top" src={bag2} /></Link>  
+            <Card.Img variant="top" src={bag2} />
                 <Card.Body>
                     <Card.Title>Bag</Card.Title>
                     <Card.Text>
                         Some quick example text to build on the card title and make up the bulk of
                         the card's content.
     </Card.Text>
-                    <Button variant="primary">Go Bag</Button>
+    <Link to ="/ProductListCategory/60a4a61e318a3c21e32494a8"><Button variant="primary">Go Bag</Button></Link>  
                 </Card.Body>
             </Card>
             <Card style={{ width: '18rem' }}>
-            <Link to ="/category">  <Card.Img variant="top" src={bracelet5} /></Link> 
+             <Card.Img variant="top" src={bracelet5} />
                 <Card.Body>
                     <Card.Title>bracelet5</Card.Title>
                     <Card.Text>
                         Some quick example text to build on the card title and make up the bulk of
                         the card's content.
     </Card.Text>
-                    <Button variant="primary">Go Bag</Button>
+    <Link to ="/ProductListCategory/60994aca5c079d1905146394"><Button variant="primary">Go  Jwerlery</Button></Link> 
                 </Card.Body>
             </Card>
                 

@@ -1,10 +1,10 @@
-import "../Pages/styles/bagwomen.css"
+
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom"
 import { getselectproduct } from "../api/productApi";
 import ProductItemCategory from "./ProductItemCategory"
-//import bag1 from "../Pages/images/bag1.jpg"
+
 import React from "react"
 
 const ProductListCategory = () => {
