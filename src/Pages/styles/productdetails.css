@@ -1,21 +1,25 @@
 
-.detail{
+.ProductDetailscontainer{
     border: 5px rgb(231, 68, 182) solid;
-    height: 600px;
-    
     display: grid;
-    grid-template-columns: 15% 50% 20%;
-    grid-template-rows: 15% 50% 20%;
-    row-gap: 15px;
-    column-gap: 5px;
+    grid-template-columns:2fr 1fr 1fr;
+    grid-template-rows: 1fr ;
+ grid-gap: 5px;
     justify-content: space-around;
-    align-items: center;
+    
    
 }
-.ProductDetailImage{
-    width: 100%;
+input {
+    width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+ 
 }
-.detail p{
+.ProductDetailImage{
+    border: 5px rgb(126, 110, 102) solid;
+    width: 50%;
+}
+.detailstext{
     
     text-align: center;
     font-weight: bold;

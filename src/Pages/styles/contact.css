@@ -3,46 +3,24 @@
   color: rgb(24, 24, 207);
     border: 3px rgb(194, 13, 218) solid;
     background-color: rgb(228, 220, 224);
+    font-weight: bold;
 }
-.backtohome{
-text-align: center;
-font-weight: bold;
-}
-.contact{
-
-  overflow: hidden;
-}
-.text{
-  
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-weight: bold;
-}
-
-.footercontact{
-  display: flex;
-  flex-direction: column;
-  justify-self: center;
-}
-
-  footer {
+  .footercontact {
     text-align: center;
     padding: 3px;
     background-color: DarkSalmon;
-    color: white;
+    color: rgb(26, 24, 24);
     font-weight: bold;
     margin-top:10px;
+    font-weight: bold;
   }
-  .pictures{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-  }
-  .pictures img{
-  
+ 
+  .picturesimg{
+ 
     border: 1px solid #ddd;
   border-radius: 4px;
-  padding: 5px;
-  width: 150px;
-  height: auto;
+  padding: 10px;
+  width: 18rem;
+ height: 300px;
   box-shadow: 5px 10px #cca1c1;
   }

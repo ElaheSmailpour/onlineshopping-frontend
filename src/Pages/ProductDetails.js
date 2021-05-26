@@ -49,10 +49,12 @@ const ProductDetails = () => {
         <div className="ProductDetailscontainer">
             <div className="detail">
                 {data.image && <img className="ProductDetailImage" src={data.image} alt="Foto" />}
+                </div>
+                <div className="detailstext">
                 <p>Title:{data.name}</p>
                 <p>artikelnummer:{data.artikelnummer}</p>
                 <p>price:{data.price}</p>
-            </div>
+                </div>
             <label for="selectbagwomen">conut:</label>
             <input  type="number" className="selectbagwomen" value={productcount} onChange={(e) => HandlechangeCount(e)}/>
                 
