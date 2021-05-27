@@ -10,7 +10,7 @@ const Login = () => {
         email: "",
         password: ""
     })
-   
+
     const Handleform = (event) => {
         event.preventDefault()
         const newform = { ...form }
@@ -25,15 +25,15 @@ const Login = () => {
             password: form.password
         }
         loginApi(bodylogin).then((res) => {
-            console.log("res=",res)
+            console.log("res=", res)
             const local = res.data.token;
-            const name=res.data.name;
-            const image=res.data.image;
-         
+            const name = res.data.name;
+            const image = res.data.image;
+
             localStorage.setItem("token", local)
             localStorage.setItem("name", name)
             localStorage.setItem("image", image)
-         
+
             console.log("res=", res)
             history.push("/")
         }).catch((error) => {
@@ -43,7 +43,7 @@ const Login = () => {
 
     }
     const historygoogle = useHistory()
-    const googleAccount=()=>{
+    const googleAccount = () => {
         console.log("googleAccount")
         historygoogle.push("/google")
     }
@@ -52,8 +52,8 @@ const Login = () => {
 
             <form className="loginform">
                 <div className="imgcontainer">
-                    <span  className="close">
-                    <Link to="/">&times;</Link></span>
+                    <span className="close">
+                        <Link to="/">&times;</Link></span>
                     <img src={pic1} alt="Avatar" className="avatar" />
                 </div>
                 <div className="Login">
@@ -63,14 +63,14 @@ const Login = () => {
                     <input type="password" className="box" name={"password"} value={form.password} onChange={(e) => Handleform(e)} />
                 </div>
                 <div className="containerbutton">
-                    <button  className="btnlogin" onClick={submitlogin}>Login</button>
+                    <button className="btnlogin" onClick={submitlogin}>Login</button>
                     <button className="btngooglelogin" onClick={googleAccount}>google-Account</button>
-
-                  
-            <p className="signuptext">New User:Join Now!
+                </div>
+                <div className="signup">
+                    <p className="signuptext">New User:Join Now!
             <button className="signupbtn"><Link to="/signup">signup</Link></button></p>
-                       
-                       
+
+
                 </div>
             </form>
         </div>

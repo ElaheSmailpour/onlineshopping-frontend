@@ -27,7 +27,7 @@ const Categorylist = () => {
                     <Link>Accesories</Link>
                     <ul>
                         <Link to="/ProductListCategory/60994aca5c079d1905146394"><li>jewelry</li></Link>
-                      
+
 
 
                     </ul>
@@ -41,12 +41,14 @@ const Categorylist = () => {
 
                     </ul>
                 </div>
+                <div className="search">
 
+                    <input className="formcontrol" type="text" placeholder="Search" />
+                    <button className="btnsuccess"><i className="fa fa-fw fa-search fa-5"></i></button>
+                </div>
+              
             </nav>
 
-            <button className="btn btn-outline-success">  <i className="fa fa-fw fa-search fa-5"></i>
-                <input className="form-control" type="text" placeholder="Search" />
-            </button>
             <Link to="/"> <li>Back to Home</li></Link>
         </div>
 

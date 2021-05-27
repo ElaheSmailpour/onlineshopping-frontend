@@ -44,8 +44,7 @@ const ProductDetails = () => {
             console.log("error axios ProductDetails=", err)
             console.log(err)
         })
-       // const localaddcart=localStorage.setItem("add",addcard())
-       // console.log("localaddcart=",localaddcart)
+     
 
     }
     const HandlechangeCount = (event) => {

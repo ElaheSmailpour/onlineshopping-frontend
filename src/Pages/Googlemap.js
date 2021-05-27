@@ -13,6 +13,7 @@ const center = {
 function Googlemap() {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
+    
     googleMapsApiKey: "AIzaSyDm06Mnb8z3QhOqQ7sK54V4mLgph4NnAwg"
   })
 
@@ -44,3 +45,5 @@ function Googlemap() {
 }
 
 export default Googlemap
+
+//Google Developers Console von diese seite können wir API key bekommen.

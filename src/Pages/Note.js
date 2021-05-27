@@ -4,12 +4,12 @@ import "./styles/note.css"
 import React from 'react';
 import { getnote } from "../api/productApi"
 import ProductItemCategory from './ProductItemCategory';
-
+import {Link} from "react"
 const Note = () => {
     const [data, setData] = useState([])
     useEffect(() => {
         readdata()
-
+       
     }, [])
 
     const readdata = () => {
@@ -33,13 +33,13 @@ const Note = () => {
                             noteremove={true}
                             productid={item._id}
                             updatedata={readdata}
-                            addcart={true}
+                            addcartprops={true}
                         />
                     </li>
                 )}
 
             </ul>
-
+          
         </div>
     )
 }
