@@ -28,7 +28,10 @@ const ProductItemCategory = ({ productprice, productimage, productid, noteremove
                     </div>
                 
             </div>
-            {noteremove && <button onClick={remove}>[X]</button>}
+            {noteremove && <button className="removeButton" onClick={remove}>[X]</button>}
+            <div className="adddivbutton">
+                <button className="addButton"><i className="fas fa-shopping-cart fa-2x"></i>Add cart</button>
+            </div>
         </div>
 
 

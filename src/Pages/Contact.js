@@ -16,15 +16,15 @@ const Contact = () => {
             <Card className="text-center">
                 <Card.Header className="headercontact">Contact uns!</Card.Header>
                 <Card.Body>
-               
+
                     <Card.Text>
                         Are you a customer, seller, service provider or interested in working with Eli Shop? Please select the appropriate request and contact us by email. We look forward to your message!!
     </Card.Text>
-    <Card.Img  className="picturesimg"  variant="top" src={menshirts4}/>
-                <Card.Img  className="picturesimg" variant="top" src={bag8}/>
-              
-                <Card.Img variant="top" className="picturesimg" src={menshirts2}/>
-                <Card.Img  variant="top"  className="picturesimg" src={bracelet3}/>
+                    <Card.Img className="picturesimg" variant="top" src={menshirts4} />
+                    <Card.Img className="picturesimg" variant="top" src={bag8} />
+
+                    <Card.Img variant="top" className="picturesimg" src={menshirts2} />
+                    <Card.Img variant="top" className="picturesimg" src={bracelet3} />
                 </Card.Body>
                 <Card.Footer className="text-muted footercontact">
                     <p>Author: Elahe Smailpour</p>

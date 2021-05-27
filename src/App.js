@@ -7,7 +7,7 @@ import {
 
 } from "react-router-dom";
 import React from "react"
-//import Test from "./Pages/Test"
+
 import ProductDetails from './Pages/ProductDetails'
 import Login from "./Pages/Login"
 import Home from "./Pages/Home"
@@ -21,6 +21,7 @@ import NewProduct from "./Pages/NewProduct"
 import Signupgoogle from "./Pages/Signupgoogle"
   import  Google from "./Pages/Google"
   import ProductListCategory from "./Pages/ProductListCategory"
+ 
 function App() {
 
   return (

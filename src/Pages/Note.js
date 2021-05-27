@@ -24,9 +24,10 @@ const Note = () => {
     return (
 
         <div className="Note">
-            <ul>
+            <h1 className="headerNote">My favorite</h1>
+            <ul className="noteUl">
                 {data.map((item, index) =>
-                    <li key={index}>
+                    <li key={index} className="noteLi">
                         <ProductItemCategory productimage={item.image}
                             productprice={item.price}
                             noteremove={true}
@@ -38,6 +39,7 @@ const Note = () => {
                 )}
 
             </ul>
+            
         </div>
     )
 }
