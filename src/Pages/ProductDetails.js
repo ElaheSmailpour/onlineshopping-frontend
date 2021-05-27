@@ -6,6 +6,9 @@ import { getproductdetails } from "../api/productApi"
 import { useHistory } from "react-router-dom"
 import { addcartpost } from "../api/productApi"
 import "../Pages/styles/productdetails.css"
+import { Card } from "react-bootstrap"
+import { Link } from "react-router-dom"
+
 const ProductDetails = () => {
     const params = useParams()
     const [data, setData] = useState("")
@@ -46,6 +49,7 @@ const ProductDetails = () => {
         setProductcount(event.target.value)
     }
     return (
+       <div className="ProductDetails">
         <div className="ProductDetailscontainer">
             <div className="detail">
                 {data.image && <img className="ProductDetailImage" src={data.image} alt="Foto" />}
@@ -54,12 +58,30 @@ const ProductDetails = () => {
                 <p>Title:{data.name}</p>
                 <p>artikelnummer:{data.artikelnummer}</p>
                 <p>price:{data.price}</p>
-                </div>
-            <label for="selectbagwomen">conut:</label>
-            <input  type="number" className="selectbagwomen" value={productcount} onChange={(e) => HandlechangeCount(e)}/>
                 
-            <button onClick={addcard}><i className="fas fa-shopping-cart fa-2x"></i>Add to cart</button>
-            <button onClick={note}><i className="far fa-heart fa-2x"></i>Add to Note</button>
+            <label for="count">conut:</label>
+            <input  type="number" className="producdetailsCount" value={productcount} onChange={(e) => HandlechangeCount(e)}/>
+            </div>
+            <div className="productdetailsDiv">
+            <button className="productdetailsButton" onClick={addcard}><i className="fas fa-shopping-cart fa-2x"></i>Add to cart</button>
+            <button  className="productdetailsButton" onClick={note}><i className="far fa-heart fa-2x"></i>Add to Note</button>
+            </div>
+            </div>
+            <Card.Footer className="text-muted footercontact">
+                    <p>Author: Elahe Smailpour</p>
+                    <p>Address: Golzheimer Strasse Düsseldorf 130</p>
+                    <p>Telefon:0176176666</p>
+                    <p>contact us via:
+  <a href="mailto:hege@example.com">eli_es87@yahoo.com</a>
+                        <a href="https://www.instagram.com/"><i class="fab fa-instagram-square fa-2x"></i></a>
+                        <a href="https://mail.yahoo.com/?.lang=de-DE"><i class="fas fa-envelope-square fa-2x"></i></a>
+                        <a href="http://linkedin.com"><i class="fab fa-linkedin fa-2x"></i></a>
+                    </p>
+
+                </Card.Footer>
+                <p className="backtohomeProductdetails"><Link to="/"><i class="fa fa-home fa-2x">Home</i></Link></p>
+           
+       
         </div>
     )
 

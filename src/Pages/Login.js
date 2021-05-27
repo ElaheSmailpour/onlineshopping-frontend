@@ -29,11 +29,11 @@ const Login = () => {
             const local = res.data.token;
             const name=res.data.name;
             const image=res.data.image;
-           // const imagegoogle=res.file.filename;
+         
             localStorage.setItem("token", local)
             localStorage.setItem("name", name)
             localStorage.setItem("image", image)
-           // localStorage.setItem("imagegoogle",imagegoogle)
+         
             console.log("res=", res)
             history.push("/")
         }).catch((error) => {

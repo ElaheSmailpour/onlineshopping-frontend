@@ -2,27 +2,47 @@
 .ProductDetailscontainer{
     border: 5px rgb(231, 68, 182) solid;
     display: grid;
-    grid-template-columns:2fr 1fr 1fr;
+    grid-template-columns:1fr 1fr;
     grid-template-rows: 1fr ;
- grid-gap: 5px;
+    grid-gap: 5px;
     justify-content: space-around;
-    
-   
+    width: 100%;
 }
-input {
-    width: 50%;
-  padding: 12px 20px;
-  margin: 8px 0;
- 
-}
+
 .ProductDetailImage{
     border: 5px rgb(126, 110, 102) solid;
-    width: 50%;
+    width:400px;
+    border-radius: 50%;
 }
 .detailstext{
-    
+    border: 2px rgb(84, 84, 87) solid;
     text-align: center;
     font-weight: bold;
     color: rgb(22, 22, 21);
-    padding: 5px;
+    padding: 10px;
+    margin: 5px;
+}
+
+.productdetailsButton{
+    color: rgb(20, 19, 19);
+    padding: 14px 20px;
+    margin: 8px 5px;
+    cursor: pointer;
+    border-radius: 24px;
+    transition: 0.25s;
+    border-color: rgb(29, 223, 4);
+    text-transform: uppercase;
+    font-weight:bold ;
+    width: 50%;
+    position: relative;
+    left: 800px;
+}
+.productdetailsButton:hover{
+    background-color: rgb(255, 105, 125);
+}
+.producdetailsCount{
+    width: 20%;
+}
+.backtohomeProductdetails{
+    text-align: center;
 }
