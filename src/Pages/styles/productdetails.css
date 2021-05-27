@@ -11,8 +11,11 @@
 
 .ProductDetailImage{
     border: 5px rgb(126, 110, 102) solid;
-    width:400px;
+    width:300px;
     border-radius: 50%;
+    position: relative;
+    left: 100px;
+    top: 70px;
 }
 .detailstext{
     border: 2px rgb(84, 84, 87) solid;
