@@ -2,35 +2,51 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    margin: 5px;
-    padding: 5px;
+    margin: 10px;
+    padding: 10px;
 }
 .loginform{
     border: 3px blue solid;
+  
 }
 input[type=text], input[type=password] {
-    width: 100%;
+   width: 50%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
+  
+    
+  }
+  .box{
+    padding: 14px 10px;
+   display: block;
+   margin: 5px;
+   width: 100px;
+   border: 1px rgb(145, 112, 138) solid;
+   outline:none;
+
+
+border-radius: 24px;
+transition: 0.25s;
+  }
+  .box :hover{
+    border-color: rgb(29, 223, 4);
   }
   
 .btnlogin{
-    background-color: #56b1d4;
-    color: white;
+   
+    color: rgb(20, 19, 19);
     padding: 14px 20px;
     margin: 8px 0;
     cursor: pointer;
-    
+    border-radius: 24px;
+    transition: 0.25s;
+    border-color: rgb(29, 223, 4);
 }
-button:hover {
-    opacity: 0.8;
-  }
+
   img.avatar {
     width: 20vw;
-    border-radius: 50%;
+   
   }
   .imgcontainer {
     text-align: center;
@@ -50,19 +66,37 @@ button:hover {
     font-weight: bold;
   }
   .signupbtn{
-    background-color: #066661;
-    color: white;
+    color: rgb(20, 19, 19);
     padding: 15px 20px;
     font-size: larger;
     margin: 8px 0;
     cursor: pointer;
-    
+    border-radius: 24px;
+    transition: 0.25s;
+    border-color: rgb(29, 223, 4);
   }
   .btngooglelogin{
-    background-color: #066066;
-    color: white;
-    padding: 14px 20px;
+    color: rgb(20, 19, 19);
+    padding: 10px;
     font-size: larger;
     margin: 8px 0;
     cursor: pointer;
+    display: block;
+    border-radius: 24px;
+transition: 0.25s;
+border-color: rgb(29, 223, 4);
+  }
+  .btngooglelogin :hover{
+    background-color: rgb(23, 145, 182);
+  }
+ 
+  .signuptext{
+    color: rgb(2, 2, 2);
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  .loginlabel{
+    color: rgb(2, 2, 2);
+    text-transform: uppercase;
+    font-weight: bold;
   }

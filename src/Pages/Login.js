@@ -3,7 +3,7 @@ import React from 'react';
 import "./styles/login.css"
 import { loginApi } from "../api/userApi.js"
 import { useHistory } from "react-router-dom";
-import pic1 from "../Pages/images/login.png"
+import pic1 from "../Pages/images/login1.svg"
 import { useState } from "react"
 const Login = () => {
     const [form, setForm] = useState({
@@ -57,17 +57,17 @@ const Login = () => {
                     <img src={pic1} alt="Avatar" className="avatar" />
                 </div>
                 <div className="Login">
-                    <label>User Email:</label>
-                    <input type="text" name={"email"} value={form.email} onChange={(e) => Handleform(e)} />
-                    <label>Password:</label>
-                    <input type="password" name={"password"} value={form.password} onChange={(e) => Handleform(e)} />
+                    <label className="loginlabel">Email:</label>
+                    <input type="text" className="box" name={"email"} value={form.email} onChange={(e) => Handleform(e)} />
+                    <label className="loginlabel">Password:</label>
+                    <input type="password" className="box" name={"password"} value={form.password} onChange={(e) => Handleform(e)} />
                 </div>
                 <div className="containerbutton">
                     <button  className="btnlogin" onClick={submitlogin}>Login</button>
-                    <button className="btngooglelogin" onClick={googleAccount}>login with google-Account</button>
+                    <button className="btngooglelogin" onClick={googleAccount}>google-Account</button>
 
                   
-            <p>New User:Join Now!
+            <p className="signuptext">New User:Join Now!
             <button className="signupbtn"><Link to="/signup">signup</Link></button></p>
                        
                        
