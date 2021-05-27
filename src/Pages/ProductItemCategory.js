@@ -2,7 +2,7 @@ import React from "react"
 import { removenote } from "../api/productApi"
 import "../Pages/styles/ProductItemCategory.css"
 import { Link } from "react-router-dom"
-const ProductItemCategory = ({ productprice, productimage, productid, noteremove, updatedata, countporduct }) => {
+const ProductItemCategory = ({ productprice, productimage, productid, noteremove, updatedata, countporduct,addcart }) => {
 
     const remove = () => {
         removenote(productid).then((res) => {
@@ -30,7 +30,7 @@ const ProductItemCategory = ({ productprice, productimage, productid, noteremove
             </div>
             {noteremove && <button className="removeButton" onClick={remove}>[X]</button>}
             <div className="adddivbutton">
-                <button className="addButton"><i className="fas fa-shopping-cart fa-2x"></i>Add cart</button>
+              {addcart && <button className="addButton"><i className="fas fa-shopping-cart fa-2x"></i>Add cart</button>}
             </div>
         </div>
 
