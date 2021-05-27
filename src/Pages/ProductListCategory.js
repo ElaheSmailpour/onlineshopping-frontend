@@ -31,6 +31,7 @@ const ProductListCategory = () => {
                         <ProductItemCategory productimage={item.image}
                             productprice={item.price}
                             productid={item._id}
+                            
                         />
                     </li>
                 )}

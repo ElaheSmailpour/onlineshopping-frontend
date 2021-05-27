@@ -39,11 +39,14 @@ const ProductDetails = () => {
     const addcard = () => {
         addcartpost(params.id, productcount).then((res) => {
             history.push("/shoppingcart")
-
+     
         }).catch(err => {
             console.log("error axios ProductDetails=", err)
             console.log(err)
         })
+       // const localaddcart=localStorage.setItem("add",addcard())
+       // console.log("localaddcart=",localaddcart)
+
     }
     const HandlechangeCount = (event) => {
         setProductcount(event.target.value)

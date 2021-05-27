@@ -33,13 +33,13 @@ const Note = () => {
                             noteremove={true}
                             productid={item._id}
                             updatedata={readdata}
-
+                            addcart={true}
                         />
                     </li>
                 )}
 
             </ul>
-            
+
         </div>
     )
 }

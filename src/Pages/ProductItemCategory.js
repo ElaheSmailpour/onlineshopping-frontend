@@ -12,6 +12,9 @@ const ProductItemCategory = ({ productprice, productimage, productid, noteremove
             console.log(err)
         })
     }
+    // const  addtocart=()=>{
+    //     localStorage.getItem("localaddcart")
+    // }
     return (
         
         <div className="ProductItemCategory">
