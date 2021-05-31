@@ -40,3 +40,11 @@ flex-wrap: wrap;
     color: white;
     font-weight: bolder;
 }
+.usernamelogin{
+  
+    width: 1rem;
+    padding: 7px;
+    height: 1rem;
+    color: rgb(145, 197, 68);
+    
+}
