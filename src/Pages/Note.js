@@ -4,7 +4,10 @@ import "./styles/note.css"
 import React from 'react';
 import { getnote } from "../api/productApi"
 import ProductItemCategory from './ProductItemCategory';
-import {Link} from "react"
+import {Link} from "react-router-dom"
+
+
+
 const Note = () => {
     const [data, setData] = useState([])
     useEffect(() => {
@@ -24,7 +27,10 @@ const Note = () => {
     return (
 
         <div className="Note">
-            <h1 className="headerNote">My favorite</h1>
+            <h1 className="headerNote">My favorite
+            <p className="backtohomeNote"><Link to="/"><i class="fa fa-home ">Home</i></Link></p>
+            </h1>
+           
             <ul className="noteUl">
                 {data.map((item, index) =>
                     <li key={index} className="noteLi">
@@ -39,6 +45,8 @@ const Note = () => {
                 )}
 
             </ul>
+           
+                              
           
         </div>
     )

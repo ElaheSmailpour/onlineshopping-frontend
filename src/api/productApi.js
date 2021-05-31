@@ -35,6 +35,14 @@ export const addcartpost = (productid,count) => {
     return getAxios().post(`/addcart`,{productid,count})
 
 }
+export const addcartinNote = (productid,count) => {
+    return getAxios().post(`/addcart/addcartinNote`,{productid,count})
+
+}
+export const removeseletcount = (productid) => {
+    return getAxios().delete(`/addcart/${productid}`)
+
+}
 export const getcart = () => {
     return getAxios().get(`/addcart`)
 
@@ -43,6 +51,8 @@ export const removenote = (productid) => {
     return getAxios().delete(`/note/${productid}`)
 
 }
+
+
 
 export const addProductApi = (product) => {
     return getAxios().post("/product", product)

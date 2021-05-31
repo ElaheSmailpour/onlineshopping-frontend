@@ -22,3 +22,11 @@ flex-wrap: wrap;
  .home{
    background-color: rgb(197, 237, 238);
  }
+.spancart{
+  background-color: red;
+    border-radius: 50%;
+    width: 1rem;
+    padding: 5px;
+    height: 1rem;
+    color: white;
+}

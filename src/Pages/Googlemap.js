@@ -22,6 +22,7 @@ function Googlemap() {
   const onLoad = React.useCallback(function callback(map) {
     const bounds = new window.google.maps.LatLngBounds();
     map.fitBounds(bounds);
+  
     setMap(map)
   }, [])
 
@@ -37,11 +38,12 @@ function Googlemap() {
         onLoad={onLoad}
         onUnmount={onUnmount}
       >
+     
+     
       
-        { /* Child components, such as markers, info windows, etc. */ }
-        <></>
       </GoogleMap>
-  ) : <></>
+  ) : ""
+  
 }
 
 export default Googlemap

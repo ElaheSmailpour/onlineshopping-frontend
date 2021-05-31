@@ -1,10 +1,10 @@
 import {NavDropdown,Form,Nav,Button,FormControl,Navbar  } from "react-bootstrap"
-
+import React from 'react';
+import { Link } from "react-router-dom"
 const Dropdownmenu=()=>{
     return(
         <div className="Dropdownmenu">
 <Navbar bg="light" expand="lg">
- 
   <Navbar.Toggle aria-controls="navbarScroll" />
   <Navbar.Collapse id="navbarScroll">
     <Nav
@@ -12,21 +12,27 @@ const Dropdownmenu=()=>{
       style={{ maxHeight: '100px' }}
       navbarScroll
     >
-      <Nav.Link href="/">Home</Nav.Link>
-      
-      <NavDropdown title="Link1" id="navbarScrollingDropdown">
-        <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-        <NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
+      <NavDropdown title="Login" id="navbarScrollingDropdown">
+      <NavDropdown.Item href="#action3">My Account</NavDropdown.Item>
+        <NavDropdown.Item href="#action3">My profil</NavDropdown.Item>
+        <NavDropdown.Item href="#action4">My Order</NavDropdown.Item>
         <NavDropdown.Divider />
-        <NavDropdown.Item href="#action5">Something else here</NavDropdown.Item>
+        <NavDropdown.Item href="#action5">Logout</NavDropdown.Item>
+        <NavDropdown.Item href="#action5">Logout</NavDropdown.Item>
       </NavDropdown>
-      <NavDropdown title="Link2" id="navbarScrollingDropdown">
-        <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-        <NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
+      <NavDropdown title="Category" id="navbarScrollingDropdown">
+        <NavDropdown.Item href="#action3">
+        <Link to="/ProductListCategory/60a4a61e318a3c21e32494a8">
+          Bag</Link></NavDropdown.Item>
+        <NavDropdown.Item href="#action4">Men
+        </NavDropdown.Item>
+        <NavDropdown.Item href="#action5">Children</NavDropdown.Item>
         <NavDropdown.Divider />
-        <NavDropdown.Item href="#action5">Something else here</NavDropdown.Item>
+
+       
+
+        <NavDropdown.Item href="#action5"> <Link to="/ProductListCategory/60994aca5c079d1905146394">Accesories</Link></NavDropdown.Item>
       </NavDropdown>
-     
     </Nav>
     <Form className="d-flex">
       <FormControl
@@ -39,8 +45,9 @@ const Dropdownmenu=()=>{
     </Form>
   </Navbar.Collapse>
 </Navbar>
+
+
         </div>
     )
 }
-
 export default Dropdownmenu

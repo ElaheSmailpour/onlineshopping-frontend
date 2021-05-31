@@ -4,6 +4,10 @@ export const loginApi=(login)=>{
     return getAxios().post("/api/login",login)
 }
 
+export const getmetApi=()=>{
+    return getAxios().get("/api/getme")
+}
+
 
 export const addsignupApi=(signup)=>{
     return getAxios().post("/api/signup",signup)

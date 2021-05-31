@@ -3,26 +3,13 @@ import "./styles/category.scss"
 import React from 'react';
 
 const Categorylist = () => {
+const searchinput=()=>{
 
+}
     return (
         <div className="category-container">
             <nav>
-                <div className="categorylist">
-                    <Link>Children</Link>
-                    <ul>
-                        <Link><li>shirt</li></Link>
-                        <Link> <li>dress</li></Link>
-                    </ul>
-                </div>
-
-                <div>
-                    <Link>Men</Link>
-                    <ul>
-                        <Link><li>shirt</li></Link>
-                        <Link> <li>dress</li></Link>
-
-                    </ul>
-                </div>
+               
                 <div>
                     <Link>Accesories</Link>
                     <ul>
@@ -44,7 +31,7 @@ const Categorylist = () => {
                 <div className="search">
 
                     <input className="formcontrol" type="text" placeholder="Search" />
-                    <button className="btnsuccess"><i className="fa fa-fw fa-search fa-5"></i></button>
+                    <button className="btnsuccess" onClick={searchinput}><i className="fa fa-fw fa-search fa-5"></i></button>
                 </div>
               
             </nav>
