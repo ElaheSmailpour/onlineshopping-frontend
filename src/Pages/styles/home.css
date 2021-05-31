@@ -23,10 +23,20 @@ flex-wrap: wrap;
    background-color: rgb(197, 237, 238);
  }
 .spancart{
-  background-color: red;
+  background-color: rgb(224, 145, 145);
     border-radius: 50%;
     width: 1rem;
-    padding: 5px;
+    padding: 7px;
     height: 1rem;
     color: white;
+    font-weight: bolder;
+}
+.spanNote{
+  background-color: rgb(224, 145, 145);
+    border-radius: 50%;
+    width: 1rem;
+    padding: 7px;
+    height: 1rem;
+    color: white;
+    font-weight: bolder;
 }

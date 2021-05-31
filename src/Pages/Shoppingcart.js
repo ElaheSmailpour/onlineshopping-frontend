@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react"
-//import { useHistory } from "react-router-dom";
-import ProductItemCategory from "../Pages/ProductItemCategory"
+
 import { getcart } from "../api/productApi"
 import ProductItemCart from "./ProductItemCart"
 import React from 'react';

@@ -10,10 +10,13 @@ import { useEffect, useState } from 'react';
 import "./styles/home.css"
 const Home = () => {
     const [cartcount, setCartcount] = useState("")
+    const [countNote, setcountNote] = useState("")
     useEffect(() => {
         getmetApi().then((res) => {
            const count= res.data.cart.reduce((acc,item)=>acc+item.count,0)
+           const countaddNote=res.data.notes.length;
             setCartcount(count)
+            setcountNote(countaddNote)
             console.log("getme")
         }).catch((error) => {
             console.log("errorgetmetApi", error)
@@ -68,6 +71,9 @@ const Home = () => {
                                 
                             </li>
                             <li className="nav-item active">
+                            <span className="spanNote">
+                                 {countNote}   
+                                </span>
                                 <i className="far fa-heart fa-2x"></i>
                                 <Link to="/note">Note</Link>
                             </li>
