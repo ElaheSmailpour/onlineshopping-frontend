@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
-
+import {Link} from "react-router-dom"
 import { getcart } from "../api/productApi"
 import ProductItemCart from "./ProductItemCart"
+import "../Pages/styles/shopingcart.css" 
 import React from 'react';
 const Shoppingcart = () => {
     const [data, SetData] = useState([])
@@ -28,7 +29,8 @@ const Shoppingcart = () => {
     }
     return (
         <div className="Shoppingcart">
-            <h1>Shoppingcart....</h1>
+            <h1 className="headerCart">Shoppingcart....</h1>
+            <p className="backtohomeNote"><Link to="/"><i class="fa fa-home fa-2x">Home</i></Link></p>
             <ul className="productshoppingcart">
                 {data.map((item, index) => {
                     console.log(index,item)
@@ -45,7 +47,7 @@ const Shoppingcart = () => {
                 )}
 
             </ul>
-
+         
         </div>
     )
 }

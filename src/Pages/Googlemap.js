@@ -40,7 +40,7 @@ function Googlemap() {
       >
      
      
-      
+      {map ? "" : ""}
       </GoogleMap>
   ) : ""
   

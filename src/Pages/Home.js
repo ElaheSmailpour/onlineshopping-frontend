@@ -14,15 +14,16 @@ const Home = () => {
     const [username, setUsername] = useState("")
     useEffect(() => {
         getmetApi().then((res) => {
+
             const count = res.data.cart.reduce((acc, item) => acc + item.count, 0)
             const countaddNote = res.data.notes.length;
             const showUsername = res.data.name;
             setCartcount(count)
             setcountNote(countaddNote)
             setUsername(showUsername)
-            console.log("getme")
+            console.log("getme=")
         }).catch((error) => {
-            console.log("errorgetmetApi", error)
+            console.log("error with getmetApi", error)
         })
     }, [])
     const getaccountbtn = () => {
@@ -71,7 +72,7 @@ const Home = () => {
 
                             <li className="nav-item active">
                                 <span className="spancart">
-                                    {cartcount}
+                                {cartcount  ? cartcount : "cart is Empty"}
                                 </span>
                                 <i className="fas fa-shopping-cart fa-2x"></i>
 

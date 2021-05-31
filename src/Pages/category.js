@@ -15,8 +15,6 @@ const searchinput=()=>{
                     <ul>
                         <Link to="/ProductListCategory/60994aca5c079d1905146394"><li>jewelry</li></Link>
 
-
-
                     </ul>
                 </div>
                 <div>

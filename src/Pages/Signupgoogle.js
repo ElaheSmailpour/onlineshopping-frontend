@@ -76,7 +76,7 @@ const Signupgoogle = () => {
     return (
         <div className="Signupgoogle">
             <h1>Please signup now!</h1>
-            <form className="signupgoogle-form" enctype="multipart/form-data">
+            <form className="signupgoogle-form" encType="multipart/form-data">
                 <label for="gender">Gender:</label>
                 <br></br>
                 <input type="Radio" name="Male" label="Male" checked={gender === "Male"} onClick={(e) => checkedgender(e)} />
