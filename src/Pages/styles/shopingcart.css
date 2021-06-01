@@ -1,6 +1,56 @@
 .headerCart{
-    border-bottom: 2px rgb(20, 20, 129) solid;
+   
     background-color: rgb(87, 76, 97);
     text-align: center;
     color:  white;
+}
+.titelCart{
+    border-bottom: 3px rgb(52, 29, 88) solid;
+    font-weight: bold;
+   
+}
+.pay{
+    color: rgb(20, 19, 19);
+  padding: 10px;
+  font-size: larger;
+  margin: 8px 0;
+  cursor: pointer;
+  display: block;
+  border-radius: 24px;
+transition: 0.25s;
+color: white;
+width: 10rem;
+margin-left: 1rem;
+  font-weight: bolder;
+  
+  background-color: rgb(212, 20, 20);
+}
+.count{
+    text-align: center;
+}
+thead >tr{
+  border-bottom: 2px rgb(20, 20, 129) solid;
+
+}
+thead>tr>th:nth-child(3){
+  width: 100px;
+}
+table{
+  width: 100%;
+}
+.imgCart{
+  width: 10rem;
+}
+.paytotal{
+  border-top: 3px grey solid;
+  display: flex;
+  text-transform: uppercase;
+  font-weight: bold;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  
+}
+.paytotal p{
+  margin-bottom: 0px;
 }

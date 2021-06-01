@@ -3,13 +3,11 @@ import "./styles/category.scss"
 import React from 'react';
 
 const Categorylist = () => {
-const searchinput=()=>{
 
-}
     return (
         <div className="category-container">
             <nav>
-               
+
                 <div>
                     <Link>Accesories</Link>
                     <ul>
@@ -27,11 +25,12 @@ const searchinput=()=>{
                     </ul>
                 </div>
                 <div className="search">
-
+                    <i className="fa fa-fw fa-search fa-5"></i>
                     <input className="formcontrol" type="text" placeholder="Search" />
-                    <button className="btnsuccess" onClick={searchinput}><i className="fa fa-fw fa-search fa-5"></i></button>
+
+
                 </div>
-              
+
             </nav>
 
             <Link to="/"> <li>Back to Home</li></Link>

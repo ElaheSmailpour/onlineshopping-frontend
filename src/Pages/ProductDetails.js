@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom"
 import { useEffect, useState } from 'react';
 import { getproductdetails } from "../api/productApi"
 import { useHistory } from "react-router-dom"
-import { addcartpost } from "../api/productApi"
+import { addcartinNote } from "../api/productApi"
 import "../Pages/styles/productdetails.css"
 import { Card } from "react-bootstrap"
 import { Link } from "react-router-dom"
@@ -12,7 +12,7 @@ import { Link } from "react-router-dom"
 const ProductDetails = () => {
     const params = useParams()
     const [data, setData] = useState("")
-    const [productcount, setProductcount] = useState(1)
+   
     useEffect(() => {
 
         getproductdetails(params.id).then((response) => {
@@ -37,7 +37,7 @@ const ProductDetails = () => {
     }
 
     const addcard = () => {
-        addcartpost(params.id, productcount).then((res) => {
+        addcartinNote(params.id, 1).then((res) => {
             history.push("/shoppingcart")
      
         }).catch(err => {
@@ -47,9 +47,7 @@ const ProductDetails = () => {
      
 
     }
-    const HandlechangeCount = (event) => {
-        setProductcount(event.target.value)
-    }
+   
     return (
         <div className="ProductDetails">
             <div className="ProductDetailscontainer">
@@ -61,8 +59,7 @@ const ProductDetails = () => {
                     <p>artikelnummer:{data.artikelnummer}</p>
                     <p>price:{data.price}</p>
 
-                    <label for="count">conut:</label>
-                    <input type="number" className="producdetailsCount" value={productcount} onChange={(e) => HandlechangeCount(e)} />
+                    
                 </div>
                 <div className="productdetailsDiv">
                     <button className="productdetailsButton" onClick={addcard}><i className="fas fa-shopping-cart fa-2x"></i>Add to cart</button>

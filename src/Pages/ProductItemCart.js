@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-
+import "../Pages/styles/productitemcart.css"
 import { addcartpost } from "../api/productApi"
 import { Link } from "react-router-dom"
 import {removeseletcount} from "../api/productApi"
@@ -23,6 +23,7 @@ const ProductItemCart = ({ productprice, productimage, productid,updatedata, cou
             console.log(err)
         })
     }
+   
     return (
 
         <div className="ProductItemCart">
@@ -38,9 +39,10 @@ const ProductItemCart = ({ productprice, productimage, productid,updatedata, cou
                         {"+".repeat(100).split("").map((item, index) => <option value={index + 1}>{index + 1}</option>)}
 
                     </select>
-                    <p>price:{productprice}</p>
+                    <p className="price">price:{productprice}</p>
                 </div>
                 <button onClick={removeselectcount}>[X]</button>
+                <p className="totalPrice">Total Price:</p>
 
             </div>
 

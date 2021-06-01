@@ -8,7 +8,8 @@ import { useState } from "react"
 const Login = () => {
     const [form, setForm] = useState({
         email: "",
-        password: ""
+        password: "",
+        remberme:false
     })
 
     const Handleform = (event) => {
@@ -17,12 +18,13 @@ const Login = () => {
         newform[event.target.name] = event.target.value
         setForm(newform)
     }
-    const history = useHistory()
+ 
     const submitlogin = (event) => {
         event.preventDefault()
         const bodylogin = {
             email: form.email,
-            password: form.password
+            password: form.password,
+            remberme:form.remberme
         }
         loginApi(bodylogin).then((res) => {
             console.log("res=", res)
@@ -35,7 +37,8 @@ const Login = () => {
             localStorage.setItem("image", image)
 
             console.log("res=", res)
-            history.push("/")
+            window.location.assign("/")
+           
         }).catch((error) => {
             console.log(error.response);
             alert("email or password is incorrect!")
@@ -46,6 +49,12 @@ const Login = () => {
     const googleAccount = () => {
         console.log("googleAccount")
         historygoogle.push("/google")
+    }
+    const OnchangeremberMe=(event)=>{
+        event.preventDefault()
+        const newform = { ...form }
+        newform.remberme = event.target.checked;
+        setForm(newform)
     }
     return (
         <div className="logincontainer" >
@@ -65,6 +74,10 @@ const Login = () => {
                 <div className="containerbutton">
                     <button className="btnlogin" onClick={submitlogin}>Login</button>
                     <button className="btngooglelogin" onClick={googleAccount}>google-Account</button>
+                </div>
+                <div className="remember">
+                <label className="rememberMe">Remember me:</label>
+                    <input type="checkbox" onChange={(e)=>OnchangeremberMe(e)} />
                 </div>
                 <div className="signup">
                     <p className="signuptext">New User:Join Now!

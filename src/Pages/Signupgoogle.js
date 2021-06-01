@@ -2,9 +2,10 @@ import { useState } from "react"
 import { useHistory } from "react-router-dom";
 import { GoogleLogin } from 'react-google-login';
 import React from 'react';
-import {addsignupgoogle1Api} from "../api/userApi"
+import { addsignupgoogle1Api } from "../api/userApi"
 import { Link } from "react-router-dom"
 import { addsignupgoogleApi } from "../api/userApi"
+import "./styles/signup.css"
 const Signupgoogle = () => {
     const [gender, setGender] = useState("Male")
     const [file, setFile] = useState("")
@@ -26,17 +27,17 @@ const Signupgoogle = () => {
             return;
 
         }
-      
-        const data=new FormData()
+
+        const data = new FormData()
         data.append("name", form.name);
         data.append("email", form.email);
         data.append("password", form.password);
-        data.append("gender",gender);
+        data.append("gender", gender);
         data.append("repeatpassword", form.repeatpassword);
-       data.append("image", file);
+        data.append("image", file);
         addsignupgoogleApi(data).then((res) => {
             console.log("ressignupmitgoogle=", res)
-           
+
             alert("signup submitted successfully")
         }).catch((error) => {
             console.log(error);
@@ -50,28 +51,28 @@ const Signupgoogle = () => {
 
     }
     const HandlechangeImage = (event) => {
-        const profilImage =event.target.files[0]
-        console.log("profilImage=",profilImage)
+        const profilImage = event.target.files[0]
+        console.log("profilImage=", profilImage)
         setFile(profilImage)
     }
 
     const history1 = useHistory()
     const responseGoogle = (response) => {
-    
-        addsignupgoogle1Api({token:response.tokenId}).then((res)=>{
+
+        addsignupgoogle1Api({ token: response.tokenId }).then((res) => {
             console.log("response=", response)
             const local = res.data.token;
-            const name=res.data.name;
-            const image=res.data.image;
-          
+            const name = res.data.name;
+            const image = res.data.image;
+
             localStorage.setItem("name", name)
             localStorage.setItem("image", image)
             localStorage.setItem("token", local)
             console.log("res=", res)
             history1.push("/")
         })
-        
-      
+
+
     }
     return (
         <div className="Signupgoogle">
@@ -103,7 +104,7 @@ const Signupgoogle = () => {
 
 
             </form>
-         
+
             <GoogleLogin
                 clientId="828234666913-l6tv3hqml3adrbripk1l548g41sc0n1m.apps.googleusercontent.com"
                 buttonText="Login"

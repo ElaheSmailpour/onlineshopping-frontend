@@ -7,8 +7,9 @@ import {
 
 } from "react-router-dom";
 import React from "react"
-//import Dropdownmenu from "./Pages/Dropdownmenu"
+import Layout from "./Pages/Layout"
 import ProductDetails from './Pages/ProductDetails'
+
 import Login from "./Pages/Login"
 import Home from "./Pages/Home"
 import NotFound from "./Pages/NotFound"
@@ -21,7 +22,7 @@ import NewProduct from "./Pages/NewProduct"
 import Signupgoogle from "./Pages/Signupgoogle"
   import  Google from "./Pages/Google"
   import ProductListCategory from "./Pages/ProductListCategory"
- 
+ import Pay from "./Pages/Pay"
 function App() {
 
   return (
@@ -29,6 +30,8 @@ function App() {
     <Router>
       <div className="App">
   <div className="router"></div>
+  <Layout/>
+  
         <main>
           <Switch>
 
@@ -37,7 +40,7 @@ function App() {
             <PrivateRoute path="/shoppingcart" Component={Shoppingcart}/>
             <Route path='/product'><ProductList /></Route>
             <Route path='/note'><Note/></Route>
-         
+            <Route path='/pay'><Pay/></Route>
             <Route path='/Contact'><Contact/></Route>
             <Route path='/category'><Categorylist/></Route>
             <Route path='/NewProduct'><NewProduct/></Route>
@@ -48,7 +51,7 @@ function App() {
             <Route path='*'><NotFound /> </Route>
           </Switch>
         </main>
-      
+     
       </div>
       
     </Router>
