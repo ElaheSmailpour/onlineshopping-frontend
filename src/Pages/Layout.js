@@ -52,7 +52,7 @@ const Layout=()=>{
 
 {name && <p>welcom:{name}</p>}
 
-{image && <img src={image} alt="foto" />}
+{image && <img className="loginImage" src={image} alt="foto" />}
 
 <div className="navbarhome">
                 <nav className="navbar navbar-expand-lg navbar-light  bg-light">

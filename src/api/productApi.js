@@ -58,3 +58,7 @@ export const addProductApi = (product) => {
     return getAxios().post("/product", product)
 }
 
+export const serachProduct = (productid) => {
+    return getAxios().get(`/category/${productid}`)
+
+}

@@ -1,9 +1,25 @@
 import { Link } from "react-router-dom"
 import "./styles/category.scss"
-import React from 'react';
-
+import React, { useState } from 'react';
+import {serachProduct} from "../api/productApi"
+import { useHistory } from "react-router-dom"
 const Categorylist = () => {
+    const [searchProduct, setSearchProduct] = useState("")
 
+
+    const history=useHistory()
+    const search = (productid) => {
+        serachProduct(productid).then((res)=>{
+           history.push("/")
+        }).catch((error)=>{
+            console.log("error with seachProduct=",error)
+        })
+    }
+
+    const onchangeSearch = (event) => {
+        const eventInput = event.target.value;
+        setSearchProduct(eventInput)
+    }
     return (
         <div className="category-container">
             <nav>
@@ -25,15 +41,15 @@ const Categorylist = () => {
                     </ul>
                 </div>
                 <div className="search">
-                    <i className="fa fa-fw fa-search fa-5"></i>
-                    <input className="formcontrol" type="text" placeholder="Search" />
+                    <label><i className="fa fa-fw fa-search fa-5"></i></label>
+                    <input className="formcontrol" type="text" placeholder="Search" onChange={(e) => onchangeSearch(e)} />
 
 
                 </div>
-
+                <button onClick={search}> Search</button>
             </nav>
 
-            <Link to="/"> <li>Back to Home</li></Link>
+            <p className="backCategory"><Link to="/"><i class="fa fa-home fa-2x">Home</i></Link></p>
         </div>
 
 

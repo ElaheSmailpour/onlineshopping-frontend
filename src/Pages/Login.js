@@ -71,14 +71,15 @@ const Login = () => {
                     <label className="loginlabel">Password:</label>
                     <input type="password" className="box" name={"password"} value={form.password} onChange={(e) => Handleform(e)} />
                 </div>
-                <div className="containerbutton">
-                    <button className="btnlogin" onClick={submitlogin}>Login</button>
-                    <button className="btngooglelogin" onClick={googleAccount}>google-Account</button>
-                </div>
                 <div className="remember">
                 <label className="rememberMe">Remember me:</label>
                     <input type="checkbox" onChange={(e)=>OnchangeremberMe(e)} />
                 </div>
+                <div className="containerbutton">
+                    <button className="btnlogin" onClick={submitlogin}>Login</button>
+                    <button className="btngooglelogin" onClick={googleAccount}>google-Account</button>
+                </div>
+                
                 <div className="signup">
                     <p className="signuptext">New User:Join Now!
             <button className="signupbtn"><Link to="/signup">signup</Link></button></p>

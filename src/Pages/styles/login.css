@@ -9,6 +9,11 @@
     border: 3px blue solid;
   
 }
+.remember{
+
+  text-align: center;
+}
+
 input[type=text], input[type=password] {
    width: 50%;
     padding: 12px 20px;
@@ -47,7 +52,7 @@ transition: 0.25s;
 transition: 0.25s;
 border-color: rgb(29, 223, 4);
 position: relative;
-  left: 450px;
+  left: 400px;
   width: 15%;
 }
 
@@ -94,7 +99,7 @@ position: relative;
 transition: 0.25s;
 border-color: rgb(29, 223, 4);
 position: relative;
-    left: 450px;
+    left: 400px;
   }
   .btngooglelogin :hover{
     background-color: rgb(23, 145, 182);
