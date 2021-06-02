@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom"
 import "./styles/category.scss"
-import React, { useState } from 'react';
+import { useState,useRef} from 'react';
+import React from 'react';
 import {serachProduct} from "../api/productApi"
 import { useHistory } from "react-router-dom"
-const Categorylist = () => {
-    const [searchProduct, setSearchProduct] = useState("")
+const Categorylist = (props) => {
+   // const [searchProduct, setSearchProduct] = useState("")
+   // const [searchResult, setSearchResult] = useState("")
+const inputRef=useRef("")
 
 
     const history=useHistory()
@@ -16,9 +19,24 @@ const Categorylist = () => {
         })
     }
 
-    const onchangeSearch = (event) => {
-        const eventInput = event.target.value;
-        setSearchProduct(eventInput)
+    const getSearch = (search) => {
+        console.log("inputRef=",inputRef.current.value)
+       /*
+        props.searchKeyword(inputRef.current.value)
+
+       // const eventInput = event.target.value;
+        setSearchProduct(search)
+        if(search != ""){
+            const newContactlist=data.filter((contact)=>{
+                return  Object.values(contact).join("").toLocaleLowerCase().includes(search.toLocaleLowerCase())
+                 
+            })
+            setSearchResult(newContactlist)
+        }
+        else {
+            setSearchResult(contact)
+        }
+*/
     }
     return (
         <div className="category-container">
@@ -42,7 +60,7 @@ const Categorylist = () => {
                 </div>
                 <div className="search">
                     <label><i className="fa fa-fw fa-search fa-5"></i></label>
-                    <input className="formcontrol" type="text" placeholder="Search" onChange={(e) => onchangeSearch(e)} />
+                    <input className="formcontrol" type="text" placeholder="Search" ref={inputRef} value={props.search} onChange={getSearch} />
 
 
                 </div>
