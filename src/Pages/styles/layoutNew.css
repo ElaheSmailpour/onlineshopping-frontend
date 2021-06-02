@@ -1,0 +1,66 @@
+header ul {
+    display: flex;
+    padding: 1rem;
+    margin: unset;
+    margin-left: 5rem;
+}
+
+header nav ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: max-content;
+    margin-right: 2rem;
+    cursor: pointer;
+}
+
+header ul li a {
+    text-decoration: unset;
+    color: initial;
+}
+
+.paperDialog {
+    position: absolute !important;
+    left: 4rem;
+    top: 3.5rem;
+    /*padding: 1rem;*/
+}
+
+.paperDialog ul {
+    display: flex;
+    flex-direction: column;
+    margin: unset;
+    padding: unset;
+
+}
+
+.paperDialog ul a {
+    text-decoration: unset;
+    color: initial;
+}
+
+.paperDialog ul li {
+    padding: 0.2rem 0.5rem;
+}
+
+.paperDialog ul li:hover {
+    background: #dddddd;
+}
+
+.haveSubMenu:hover .submenu {
+    display: flex !important;
+}
+
+.submenu {
+    display: none;
+    position: fixed;
+    left: 18.5rem;
+    background: white;
+    top: 5.5rem;
+
+
+}
+
+.submenu ul li:hover {
+    background: #61dafb !important;
+}
