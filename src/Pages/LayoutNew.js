@@ -8,7 +8,7 @@ import {getmetApi} from "../api/userApi"
 import React, {useEffect, useState} from 'react';
 import CategoryIcon from '@material-ui/icons/Category';
 import FavoriteIcon from '@material-ui/icons/Favorite';
-
+import ContactPhoneIcon from '@material-ui/icons/ContactPhone';
 import {Dialog} from "@material-ui/core";
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import "../Pages/styles/layoutNew.css"
@@ -112,6 +112,11 @@ const LayoutNew = () => {
                                     {countNote}
                                 </span>
                         <Link to={"/note"}>Notes</Link>
+                    </li>
+                    <li>
+                      
+                        <ContactPhoneIcon/>
+                        <Link to={"/contact"}>Contact</Link>
                     </li>
                 </ul>
             </nav>
