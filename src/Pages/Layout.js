@@ -38,6 +38,7 @@ const Layout=()=>{
     }
     const getaccountbtn = () => {
         let local = localStorage.getItem("token")
+        
         if (local) {
 
             return <button onClick={() => { localStorage.clear(); window.location.reload() }}> logout</button>

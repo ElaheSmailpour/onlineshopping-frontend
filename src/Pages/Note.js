@@ -28,7 +28,7 @@ const Note = () => {
 
         <div className="Note">
             <h1 className="headerNote">My favorite
-            <p className="backtohomeNote"><Link to="/"><i class="fa fa-home ">Home</i></Link></p>
+            <p className="backtohomeNote"><Link to="/"><i className="fa fa-home ">Home</i></Link></p>
             </h1>
            
             <ul className="noteUl">

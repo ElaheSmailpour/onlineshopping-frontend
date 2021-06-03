@@ -77,7 +77,8 @@ const Categorylist = () => {
                 </div>
 
             </nav>
-            {productlist.length === 0 && <p>Not Found</p>}
+            {productlist.length === 0 && searchProduct  && <p>Not Found</p>}
+
             {productlist.map((item, index) => {
                 return <div key={index}> <ProductItemCategory productimage={item.image}
                     productprice={item.price}

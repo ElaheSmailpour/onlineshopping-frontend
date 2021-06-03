@@ -47,8 +47,10 @@ const LayoutNew = () => {
             console.log("error with getmetApi", error)
         })
     }
+    /*
     const getaccountbtn = () => {
         let local = localStorage.getItem("token")
+        
         if (local) {
 
             return <button onClick={() => {
@@ -58,8 +60,9 @@ const LayoutNew = () => {
 
         }
        
+       
     }
-   
+    */
 
     const onCloseDialog = () => {
         setOpenAccountDialog(false)
@@ -139,17 +142,17 @@ const LayoutNew = () => {
                     <span>my account</span>
                         <div className={"submenu"}>
                             <ul>
-
-                                <li><Link to={"/login"}>Login</Link></li>
-                                 
-                                <i className="fa fa-fw fa-user fa-2x">
+                            <i className="fa fa-fw fa-user fa-2x">
                                 <span className="usernamelogin">
                                     {username ? <i class="fas fa-check"></i> : "" }
                                 </span>
 
                                 </i>
-                                {getaccountbtn()}
+                               
 
+                                <li><Link to={"/login"}>Login</Link></li>
+                                 
+                              
                                 <li><Link to={"/signup"}>Sign up</Link></li>
                             </ul>
                         </div>
