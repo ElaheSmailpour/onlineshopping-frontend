@@ -30,6 +30,7 @@ header ul li a {
     padding: 0 1rem;
     background: white;
     border-bottom: 1px solid black;
+    background-color: rgb(228, 206, 180);
 }
 
 .paperDialog {
@@ -68,12 +69,13 @@ header ul li a {
 
 .haveSubMenu:hover .submenu {
     display: flex !important;
+   
 }
 
 .submenu {
     display: none;
     position: fixed;
-    left: 18.5rem;
+    left: 12rem;
     background: white;
     top: 5.5rem;
 

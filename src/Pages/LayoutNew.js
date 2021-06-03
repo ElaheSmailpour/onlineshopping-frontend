@@ -80,7 +80,7 @@ const LayoutNew = () => {
     }
     const name = localStorage.getItem("name")
     return (
-        <header className={"myHeader"}>
+        <header className="myHeader">
             <h1 className="headerhome">Eli Shop</h1>
 
             {name && <p className="nameUser">welcome: {name}</p>}
@@ -145,7 +145,7 @@ const LayoutNew = () => {
             </Dialog>
 
             <Dialog classes={{paper: "paperDialog"}} open={openAccountDialog} onClose={onCloseDialog}>
-                <ul>
+                <ul className="ulposition">
                     <li className={"haveSubMenu"}>
                         <span>my account</span>
                         <div className={"submenu"}>
