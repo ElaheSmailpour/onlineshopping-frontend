@@ -24,3 +24,7 @@ export const addgoogleApi=(google)=>{
 export const addsignupgoogle1Api=(google)=>{
     return getAxios().post("/api/signupgoogle1",google)
 }
+
+export const changeProfile1Api=(userdata)=>{
+    return getAxios().put("/api/",userdata)
+}

@@ -7,7 +7,7 @@ import {
 
 } from "react-router-dom";
 import React from "react"
-import Layout from "./Pages/Layout"
+//import Layout from "./Pages/Layout"
 import ProductDetails from './Pages/ProductDetails'
 import LayoutNew from "./Pages/LayoutNew"
 import Login from "./Pages/Login"
@@ -19,6 +19,7 @@ import Contact from "./Pages/Contact"
 import Categorylist from "./Pages/category"
 import ProductList from "./Pages/ProductList"
 import NewProduct from "./Pages/NewProduct"
+import ChangeProfile from "./Pages/ChangeProfile"
 import Signupgoogle from "./Pages/Signupgoogle"
   import  Google from "./Pages/Google"
   import ProductListCategory from "./Pages/ProductListCategory"
@@ -30,8 +31,8 @@ function App() {
     <Router>
       <div className="App">
   <div className="router"></div>
-  <Layout/>
-  <LayoutNew/>
+ 
+<LayoutNew/>
         <main>
           <Switch>
 
@@ -46,6 +47,7 @@ function App() {
             <Route path='/NewProduct'><NewProduct/></Route>
             <Route path='/google'><Google/></Route>
             <Route path='/signup'><Signupgoogle/></Route>
+            <PrivateRoute path='/changeProfile' Component={ChangeProfile}></PrivateRoute>
             <Route path='/ProductListCategory/:cat'><ProductListCategory/></Route>
             <Route path='/productdetails/:id'><ProductDetails/></Route>
             <Route path='*'><NotFound /> </Route>

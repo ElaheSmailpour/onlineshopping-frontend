@@ -10,7 +10,13 @@ const Layout=()=>{
     const [cartcount, setCartcount] = useState("")
     const [countNote, setcountNote] = useState("")
     const [username, setUsername] = useState("")
+    const [userImage, setUserImage] = useState("")
     useEffect(() => {
+        getmeDate()
+        setInterval(getmeDate,5000)
+    }, [])
+
+    const getmeDate=()=>{
         if(localStorage.getItem("token"))
         getmetApi().then((res) => {
             const count = res.data.cart.reduce((acc, item) => acc + item.count, 0)
@@ -19,15 +25,17 @@ const Layout=()=>{
             setCartcount(count)
             setcountNote(countaddNote)
             setUsername(showUsername)
+            setUserImage(res.data.image)
             console.log("getme=")
         }).catch((error) => {
-            if (error.response.status===401){
+
+            if (error.response && error.response.status===401){
                 localStorage.clear();
                 window.location.reload();
             }
             console.log("error with getmetApi", error)
         })
-    }, [])
+    }
     const getaccountbtn = () => {
         let local = localStorage.getItem("token")
         if (local) {
@@ -38,13 +46,7 @@ const Layout=()=>{
         return <Link to="/login">login</Link>
     }
     const name = localStorage.getItem("name")
-    const image = localStorage.getItem("image")
-    //const imagegoogle=localStorage.getItem("imagegoogle")
-    console.log("name=", name)
-    //console.log("imagegoogle=",imagegoogle)
-    console.log("image=", image)
-
-
+   
     return(
         
         <div className="Layout">
@@ -52,7 +54,7 @@ const Layout=()=>{
 
 {name && <p>welcom:{name}</p>}
 
-{image && <img className="loginImage" src={image} alt="foto" />}
+{userImage && <img className="loginImage" src={userImage} alt="foto" />}
 
 <div className="navbarhome">
                 <nav className="navbar navbar-expand-lg navbar-light  bg-light">
@@ -102,6 +104,11 @@ const Layout=()=>{
                                 <i className="fas fa-plus-circle fa-2x"></i>
                                 <Link to="/NewProduct">NewProduct</Link>
                             </li>
+                            <li className="nav-item active">
+                                <i className="fas fa-plus-circle fa-2x"></i>
+                                <Link to="/changeProfile">changeProfile</Link>
+                            </li>
+                          
                         </ul>
                     </div>
                 </nav>

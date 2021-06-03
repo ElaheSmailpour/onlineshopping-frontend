@@ -17,26 +17,36 @@ const LayoutNew = () => {
     const [countNote, setcountNote] = useState("")
     const [username, setUsername] = useState("")
     const [openAccountDialog, setOpenAccountDialog] = useState(false)
-
+    const [openCategoryDialog, setOpenCategoryDialog] = useState(false)
+    const [userImage, setUserImage] = useState("")
 
     useEffect(() => {
-        if (localStorage.getItem("token"))
-            getmetApi().then((res) => {
-                const count = res.data.cart.reduce((acc, item) => acc + item.count, 0)
-                const countaddNote = res.data.notes.length;
-                const showUsername = res.data.name;
-                setCartcount(count)
-                setcountNote(countaddNote)
-                setUsername(showUsername)
-                console.log("getme=")
-            }).catch((error) => {
-                if (error.response.status === 401) {
-                    localStorage.clear();
-                    window.location.reload();
-                }
-                console.log("error with getmetApi", error)
-            })
+        getmeDate()
+        setInterval(getmeDate,5000)
     }, [])
+
+    const getmeDate=()=>{
+        if(localStorage.getItem("token"))
+        getmetApi().then((res) => {
+            const count = res.data.cart.reduce((acc, item) => acc + item.count, 0)
+            const countaddNote = res.data.notes.length;
+            const showUsername = res.data.name;
+
+          
+            setCartcount(count)
+            setcountNote(countaddNote)
+            setUsername(showUsername)
+            setUserImage(res.data.image)
+            console.log("getme=")
+        }).catch((error) => {
+
+            if (error.response && error.response.status===401){
+                localStorage.clear();
+                window.location.reload();
+            }
+            console.log("error with getmetApi", error)
+        })
+    }
     const getaccountbtn = () => {
         let local = localStorage.getItem("token")
         if (local) {
@@ -47,32 +57,32 @@ const LayoutNew = () => {
             }}> logout</button>
 
         }
-        return <Link to="/login">login</Link>
+       
     }
-    const name = localStorage.getItem("name")
-    const image = localStorage.getItem("image")
-    //const imagegoogle=localStorage.getItem("imagegoogle")
-    console.log("name=", name)
-    //console.log("imagegoogle=",imagegoogle)
-    console.log("image=", image)
+   
 
     const onCloseDialog = () => {
         setOpenAccountDialog(false)
+    }
+
+    
+    const onCloseCategoryDialog = () => {
+        setOpenCategoryDialog(false)
     }
 
     const logoutClick = () => {
         localStorage.clear()
         window.location.reload();
     }
-
+    const name = localStorage.getItem("name")
     return (
         <header className={"myHeader"}>
              <h1 className="headerhome">Eli Shop</h1>
 
 {name && <p>welcom:{name}</p>}
 
-{image && <img className="loginImage" src={image} alt="foto" />}
 
+    {userImage && <img className="loginImage" src={userImage} alt="foto" />}
             <nav>
                 <ul>
                     <li onClick={() => setOpenAccountDialog(true)}>
@@ -87,9 +97,10 @@ const LayoutNew = () => {
                         <Link to={"/shoppingcart"}>Shopping Cart</Link>
                        
                     </li>
-                    <li>
+                    <li   onClick={() => setOpenCategoryDialog(true)}>
                         <CategoryIcon/>
-                        <Link to={"/category"}>Category</Link>
+                      
+                       Category
                     </li>
                     <li>
                         <FavoriteIcon/>
@@ -100,10 +111,32 @@ const LayoutNew = () => {
                     </li>
                 </ul>
             </nav>
+            <Dialog classes={{paper: "paperDialog"}} open={openCategoryDialog} onClose={onCloseCategoryDialog}>
+                <ul>
+                    <li className={"haveSubMenu"} >
+                        <span>Category</span>
+                        <div className={"submenu"}>
+                            <ul>
+
+                                <li><Link to={"/ProductListCategory/60a4a61e318a3c21e32494a8"}>Bag</Link></li>
+                                 
+        
+                                <li><Link to={"/ProductListCategory/60994aca5c079d1905146394"}>Accesories</Link></li>
+                            </ul>
+                        </div>
+                        <ChevronRightIcon/>
+                    </li>
+                   
+                    
+                </ul>
+
+                
+            </Dialog>
+
             <Dialog classes={{paper: "paperDialog"}} open={openAccountDialog} onClose={onCloseDialog}>
                 <ul>
                     <li className={"haveSubMenu"} >
-                        <a  href={"javascript:void(0)"}>my account</a>
+                    <span>my account</span>
                         <div className={"submenu"}>
                             <ul>
 
@@ -124,13 +157,12 @@ const LayoutNew = () => {
                     </li>
                    
                     <li onClick={logoutClick}>
-                        <a href={"javascript:void(0)"}>Logout</a>
+                    <span>Logout</span>
                     </li>
                 </ul>
 
                 
             </Dialog>
-
 
             
         </header>
