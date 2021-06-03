@@ -30,13 +30,7 @@ const ChangeProfile = () => {
     }
     const Submit = (event) => {
         event.preventDefault()
-     /*
-        if (form.password !== form.repeatpassword) {
-            alert("password is not equal repeatpassword")
-            return;
-
-        }
-        */
+    
 
         const data = new FormData()
         data.append("name", form.name);
@@ -46,13 +40,7 @@ const ChangeProfile = () => {
 
         data.append("image", file);
 
-        /*
-       const requestbody={
-           name:form.name,
-           gender:gender,
-           password:form.password
-       }
-       */
+    
         changeProfile1Api(data).then((res) => {
             console.log("ressignupmitgoogle=", res)
 

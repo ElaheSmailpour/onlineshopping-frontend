@@ -6,10 +6,11 @@ import {
 
 
 } from "react-router-dom";
+
 import React from "react"
 import Layout from "./Pages/Layout"
 import ProductDetails from './Pages/ProductDetails'
-//import LayoutNew from "./Pages/LayoutNew"
+import LayoutNew from "./Pages/LayoutNew"
 import Login from "./Pages/Login"
 import Home from "./Pages/Home"
 import NotFound from "./Pages/NotFound"
@@ -32,7 +33,9 @@ function App() {
       <div className="App">
   <div className="router"></div>
  
-<Layout/>
+
+<LayoutNew/>
+
 
         <main>
           <Switch>

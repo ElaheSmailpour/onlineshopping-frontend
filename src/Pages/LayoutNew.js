@@ -9,9 +9,10 @@ import React, {useEffect, useState} from 'react';
 import CategoryIcon from '@material-ui/icons/Category';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 
-import { Dialog} from "@material-ui/core";
+import {Dialog} from "@material-ui/core";
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import "../Pages/styles/layoutNew.css" 
+import "../Pages/styles/layoutNew.css"
+
 const LayoutNew = () => {
     const [cartcount, setCartcount] = useState("")
     const [countNote, setcountNote] = useState("")
@@ -22,35 +23,31 @@ const LayoutNew = () => {
 
     useEffect(() => {
         getmeDate()
-        setInterval(getmeDate,5000)
+        setInterval(getmeDate, 5000)
     }, [])
 
-    const getmeDate=()=>{
-        if(localStorage.getItem("token"))
-        getmetApi().then((res) => {
-            const count = res.data.cart.reduce((acc, item) => acc + item.count, 0)
-            const countaddNote = res.data.notes.length;
-            const showUsername = res.data.name;
+    const getmeDate = () => {
+        if (localStorage.getItem("token"))
+            getmetApi().then((res) => {
+                const count = res.data.cart.reduce((acc, item) => acc + item.count, 0)
+                const countaddNote = res.data.notes.length;
+                const showUsername = res.data.name;
+                setCartcount(count)
+                setcountNote(countaddNote)
+                setUsername(showUsername)
+                setUserImage(res.data.image)
+                console.log("getme=")
+            }).catch((error) => {
 
-          
-            setCartcount(count)
-            setcountNote(countaddNote)
-            setUsername(showUsername)
-            setUserImage(res.data.image)
-            console.log("getme=")
-        }).catch((error) => {
-
-            if (error.response && error.response.status===401){
-                localStorage.clear();
-                window.location.reload();
-            }
-            console.log("error with getmetApi", error)
-        })
+                if (error.response && error.response.status === 401) {
+                    localStorage.clear();
+                    window.location.reload();
+                }
+                console.log("error with getmetApi", error)
+            })
     }
-    /*
     const getaccountbtn = () => {
         let local = localStorage.getItem("token")
-        
         if (local) {
 
             return <button onClick={() => {
@@ -59,18 +56,22 @@ const LayoutNew = () => {
             }}> logout</button>
 
         }
-       
-       
+
     }
-    */
+
 
     const onCloseDialog = () => {
         setOpenAccountDialog(false)
     }
 
-    
+
     const onCloseCategoryDialog = () => {
         setOpenCategoryDialog(false)
+    }
+
+    const handleOpenCategory = (e) => {
+        setOpenCategoryDialog(true);
+        console.log(e)
     }
 
     const logoutClick = () => {
@@ -80,12 +81,12 @@ const LayoutNew = () => {
     const name = localStorage.getItem("name")
     return (
         <header className={"myHeader"}>
-             <h1 className="headerhome">Eli Shop</h1>
+            <h1 className="headerhome">Eli Shop</h1>
 
-{name && <p>welcom:{name}</p>}
+            {name && <p className="nameUser">welcome: {name}</p>}
 
 
-    {userImage && <img className="loginImage" src={userImage} alt="foto" />}
+           
             <nav>
                 <ul>
                     <li onClick={() => setOpenAccountDialog(true)}>
@@ -95,15 +96,15 @@ const LayoutNew = () => {
                     <li>
                         <ShoppingCartIcon/>
                         <span className="spancart">
-                                {cartcount  ? cartcount : "cart is Empty"}
+                                {cartcount}
                                 </span>
                         <Link to={"/shoppingcart"}>Shopping Cart</Link>
-                       
+
                     </li>
-                    <li   onClick={() => setOpenCategoryDialog(true)}>
+                    <li onClick={(e) => handleOpenCategory(e)}>
                         <CategoryIcon/>
-                      
-                       Category
+
+                        Category
                     </li>
                     <li>
                         <FavoriteIcon/>
@@ -114,60 +115,63 @@ const LayoutNew = () => {
                     </li>
                 </ul>
             </nav>
+            {userImage && <img className="navbar_image" src={userImage} alt="foto"/>}
+          
             <Dialog classes={{paper: "paperDialog"}} open={openCategoryDialog} onClose={onCloseCategoryDialog}>
                 <ul>
-                    <li className={"haveSubMenu"} >
+                    <li className={"haveSubMenu"}>
                         <span>Category</span>
                         <div className={"submenu"}>
                             <ul>
 
                                 <li><Link to={"/ProductListCategory/60a4a61e318a3c21e32494a8"}>Bag</Link></li>
-                                 
-        
+
+
                                 <li><Link to={"/ProductListCategory/60994aca5c079d1905146394"}>Accesories</Link></li>
                             </ul>
                         </div>
                         <ChevronRightIcon/>
                     </li>
-                   
-                    
+
+
                 </ul>
 
-                
+
             </Dialog>
 
             <Dialog classes={{paper: "paperDialog"}} open={openAccountDialog} onClose={onCloseDialog}>
                 <ul>
-                    <li className={"haveSubMenu"} >
-                    <span>my account</span>
+                    <li className={"haveSubMenu"}>
+                        <span>my account</span>
                         <div className={"submenu"}>
                             <ul>
-                            <i className="fa fa-fw fa-user fa-2x">
+
+                                <li><Link to={"/login"}>Login</Link></li>
+
+                                <i className="fa fa-fw fa-user fa-2x">
                                 <span className="usernamelogin">
-                                    {username ? <i class="fas fa-check"></i> : "" }
+                                    {username ? <i class="fas fa-check"></i> : ""}
                                 </span>
 
                                 </i>
-                               
+                                {getaccountbtn()}
 
-                                <li><Link to={"/login"}>Login</Link></li>
-                                 
-                              
                                 <li><Link to={"/signup"}>Sign up</Link></li>
+                                <li><Link to={"/changeProfile"}>Change Profile</Link></li>
                             </ul>
                         </div>
                         <ChevronRightIcon/>
                     </li>
-                   
+
                     <li onClick={logoutClick}>
-                    <span>Logout</span>
+                        <span>Logout</span>
                     </li>
                 </ul>
 
-                
+
             </Dialog>
 
-            
+
         </header>
     )
 }

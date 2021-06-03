@@ -77,7 +77,7 @@ const Layout=()=>{
                             </li>
 
                             <li className="nav-item active">
-                                <span className="spancart">
+                                <span className="spancarts">
                                 {cartcount  ? cartcount : "cart is Empty"}
                                 </span>
                                 <i className="fas fa-shopping-cart fa-2x"></i>
@@ -86,7 +86,7 @@ const Layout=()=>{
 
                             </li>
                             <li className="nav-item active">
-                                <span className="spanNote">
+                                <span className="spanNotes">
                                     {countNote}
                                 </span>
                                 <i className="far fa-heart fa-2x"></i>
@@ -106,7 +106,7 @@ const Layout=()=>{
                                 <Link to="/NewProduct">NewProduct</Link>
                             </li>
                             <li className="nav-item active">
-                                <i className="fas fa-plus-circle fa-2x"></i>
+                            <i className="fas fa-id-card-alt fa-2x"></i>
                                 <Link to="/changeProfile">changeProfile</Link>
                             </li>
                           
