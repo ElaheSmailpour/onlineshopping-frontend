@@ -1,6 +1,6 @@
 
 import React from 'react';
-import shop from "../Pages/images/shop.jpeg"
+import shop1 from "../Pages/images/shop1.jpeg"
 import "./styles/home.css"
 const Home = () => {
    
@@ -10,7 +10,7 @@ const Home = () => {
            
             <div className="imagehome">
               
-            <img  className="shopImage" src={shop}  alt="foto"/>
+            <img  className="shopImage" src={shop1}  alt="foto"/>
            
             </div>
         </div>
