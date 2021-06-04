@@ -1,17 +1,20 @@
 import "./styles/home.css"
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import {getmetApi} from "../api/userApi"
-import React, {useEffect, useState} from 'react';
+import { getmetApi } from "../api/userApi"
+import React, { useEffect, useState } from 'react';
 import CategoryIcon from '@material-ui/icons/Category';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ContactPhoneIcon from '@material-ui/icons/ContactPhone';
-import {Dialog} from "@material-ui/core";
+import { Dialog } from "@material-ui/core";
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import "../Pages/styles/layoutNew.css"
+import { serachProductApi } from "../api/productApi"
+import ProductItemCategory from "./ProductItemCategory"
+
 
 const LayoutNew = () => {
     const [cartcount, setCartcount] = useState("")
@@ -20,6 +23,8 @@ const LayoutNew = () => {
     const [openAccountDialog, setOpenAccountDialog] = useState(false)
     const [openCategoryDialog, setOpenCategoryDialog] = useState(false)
     const [userImage, setUserImage] = useState("")
+    const [searchProduct, setSearchProduct] = useState("")
+    const [productlist, setProductList] = useState([])
 
     useEffect(() => {
         getmeDate()
@@ -79,55 +84,80 @@ const LayoutNew = () => {
         window.location.reload();
     }
     const name = localStorage.getItem("name")
+
+
+    const searchkeyup = (event) => {
+        console.log(event.key)
+        if (event.key === "Enter") {
+            if (searchProduct === "") {
+                setProductList([])
+            }
+            else {
+                serachProductApi(searchProduct).then((res) => {
+                    setProductList(res.data)
+                }).catch((error) => {
+                    console.log("error with serachProduct", error)
+                })
+            }
+
+        }
+    }
+    const getSearch = (event) => {
+
+        const eventInput = event.target.value;
+        setSearchProduct(eventInput)
+
+
+    }
     return (
         <header className="myHeader">
             <h1 className="headerhome">Eli Shop</h1>
-           
+
             {name && <p className="nameUser">welcome: {name}</p>}
 
 
             <div className="searchProduct">
-                    <button><i className="fa fa-fw fa-search fa-5"></i></button>
-                    <input className="formSearchProduct" type="text" placeholder="Search"  />
-                </div>
+                <button><i className="fa fa-fw fa-search fa-5"></i></button>
+                <input className="formSearchProduct" type="text" placeholder="Search" value={searchProduct} onChange={getSearch} onKeyUp={searchkeyup} />
+            </div>
             <nav>
                 <ul>
                     <li onClick={() => setOpenAccountDialog(true)}>
-                        <AccountBoxIcon/>
+                        <AccountBoxIcon />
                         Account
                     </li>
                     <li>
-                       
-                       <span className="spanNote">
-                               {countNote}
-                               </span>
-                       <Link to={"/note"}><FavoriteIcon/></Link>
 
-                   </li>
+                        <span className="spanNote">
+                            {countNote}
+                        </span>
+                        <Link to={"/note"}><FavoriteIcon /></Link>
+
+                    </li>
                     <li>
-                       
+
                         <span className="spancart">
-                                {cartcount}
-                                </span>
-                        <Link to={"/shoppingcart"}><ShoppingCartIcon/></Link>
+                            {cartcount}
+                        </span>
+                        <Link to={"/shoppingcart"}><ShoppingCartIcon /></Link>
 
                     </li>
                     <li onClick={(e) => handleOpenCategory(e)}>
-                        <CategoryIcon/>
+                        <CategoryIcon />
 
                         Category
                     </li>
-                   
+
                     <li>
-                      
-                       
-                        <Link to={"/contact"}> <ContactPhoneIcon/>Contact</Link>
+
+
+                        <Link to={"/contact"}> <ContactPhoneIcon />Contact</Link>
                     </li>
                 </ul>
             </nav>
-            {userImage && <img className="navbar_image" src={userImage} alt="foto"/>}
-          
-            <Dialog classes={{paper: "paperDialog"}} open={openCategoryDialog} onClose={onCloseCategoryDialog}>
+            {userImage && <img className="navbar_image" src={userImage} alt="foto" />}
+
+            <Dialog classes={{ paper: "paperDialog" }} open={openCategoryDialog} onClose={onCloseCategoryDialog}>
                 <ul>
                     <li className={"haveSubMenu"}>
                         <span>Category</span>
@@ -140,7 +170,7 @@ const LayoutNew = () => {
                                 <li><Link to={"/ProductListCategory/60994aca5c079d1905146394"}>Accesories</Link></li>
                             </ul>
                         </div>
-                        <ChevronRightIcon/>
+                        <ChevronRightIcon />
                     </li>
 
 
@@ -149,7 +179,7 @@ const LayoutNew = () => {
 
             </Dialog>
 
-            <Dialog classes={{paper: "paperDialog"}} open={openAccountDialog} onClose={onCloseDialog}>
+            <Dialog classes={{ paper: "paperDialog" }} open={openAccountDialog} onClose={onCloseDialog}>
                 <ul className="ulposition">
                     <li className={"haveSubMenu"}>
                         <span>my account</span>
@@ -159,9 +189,9 @@ const LayoutNew = () => {
                                 <li><Link to={"/login"}>Login</Link></li>
 
                                 <i className="fa fa-fw fa-user fa-2x">
-                                <span className="usernamelogin">
-                                    {username ? <i class="fas fa-check"></i> : ""}
-                                </span>
+                                    <span className="usernamelogin">
+                                        {username ? <i class="fas fa-check"></i> : ""}
+                                    </span>
 
                                 </i>
                                 {getaccountbtn()}
@@ -170,7 +200,7 @@ const LayoutNew = () => {
                                 <li><Link to={"/changeProfile"}>Change Profile</Link></li>
                             </ul>
                         </div>
-                        <ChevronRightIcon/>
+                        <ChevronRightIcon />
                     </li>
 
                     <li onClick={logoutClick}>
@@ -181,7 +211,15 @@ const LayoutNew = () => {
 
             </Dialog>
 
-            
+            {productlist.length === 0 && searchProduct && <p>Not Found</p>}
+
+            {productlist.map((item, index) => {
+                return <div key={index}> <ProductItemCategory productimage={item.image}
+                    productprice={item.price}
+                    productid={item._id}
+                />
+                </div>
+            })}
         </header>
     )
 }
