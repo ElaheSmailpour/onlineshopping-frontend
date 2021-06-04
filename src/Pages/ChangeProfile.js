@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import React from 'react';
 import { changeProfile1Api } from "../api/userApi"
 import { getmetApi } from "../api/userApi"
+import "../Pages/styles/changeProfile.css"
 const ChangeProfile = () => {
 
     useEffect(() => {
@@ -65,11 +66,13 @@ const ChangeProfile = () => {
 
 
     return (
-        <div className="Signupgoogle">
+        <div className="changeProfile">
             <h1>Please Chaneg Your Profile!</h1>
-            <form className="signupgoogle-form" encType="multipart/form-data">
-                <label for="gender">Gender:</label>
-                <br></br>
+            <p className="changeprofilehome"><Link to="/"><i class="fa fa-home fa-2x">Home</i></Link></p>
+            <form className="changeProfile-form" encType="multipart/form-data">
+            
+                <label className="gernderLabel"  for="gender">Gender:</label>
+                <div className="genderProfile">
                 <input type="Radio" name="Male" label="Male" checked={gender === "Male"} onClick={(e) => checkedgender(e)} />
                 <label for="male">Male</label>
                 <input type="Radio" name="Female" label="Female" checked={gender === "Female"} value="Female"
@@ -78,18 +81,21 @@ const ChangeProfile = () => {
                 <input type="Radio" name="Other" label="Other" checked={gender === "Other"}
                     onClick={(e) => checkedgender(e)} />
                 <label for="other">Other</label>
-                <br></br>
+                </div>
+                <div className="inputProfile">
                 <label>Name:</label>
                 <input type="text" name="name" value={form.name} onChange={(e) => Handlechange(e)} />
-
                 <label>Password:</label>
                 <input type="password" name="password" value={form.password} onChange={(e) => Handlechange(e)} />
                 <label>RepeatPassword:</label>
                 <input type="password" name="repeatpassword" value={form.repeatpassword} onChange={(e) => Handlechange(e)} />
+                </div>
+                <div className="fileProfile">
                 <label>Image:</label>
                 <input type="file" name="image" id="files" onChange={HandlechangeImage} />
-                <button onClick={Submit}>Change</button>
-                <p className="backtohome"><Link to="/"><i class="fa fa-home">Home</i></Link></p>
+                </div>
+                <button  className="changeButton" onClick={Submit}>Change</button>
+              
 
 
             </form>
