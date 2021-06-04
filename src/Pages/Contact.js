@@ -38,7 +38,7 @@ const Contact = () => {
                     </p>
 
                 </Card.Footer>
-                <p className="backtohome"><Link to="/"><i class="fa fa-home">Home</i></Link></p>
+                <p className="backtohome"><Link to="/"><i class="fa fa-home fa-2x">Home</i></Link></p>
             </Card>
 
             <Googlemap />

@@ -40,23 +40,17 @@ const ChangeProfile = () => {
         data.append("gender", gender);
 
         data.append("image", file);
-
-    
         changeProfile1Api(data).then((res) => {
             console.log("ressignupmitgoogle=", res)
-
-
             alert("signup submitted successfully")
         }).catch((error) => {
             console.log(error);
-
         })
     }
     const checkedgender = (event) => {
         if (event.target.checked) {
             setGender(event.target.name)
         }
-
     }
     const HandlechangeImage = (event) => {
         const profilImage = event.target.files[0]
@@ -94,7 +88,7 @@ const ChangeProfile = () => {
                 <label>Image:</label>
                 <input type="file" name="image" id="files" onChange={HandlechangeImage} />
                 </div>
-                <button  className="changeButton" onClick={Submit}>Change</button>
+                <button  className="changeButton" onClick={Submit}>save</button>
               
 
 

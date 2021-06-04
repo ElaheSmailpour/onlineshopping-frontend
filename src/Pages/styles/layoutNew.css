@@ -66,6 +66,22 @@ header ul li a {
 .paperDialog ul li:hover {
     background: #dddddd;
 }
+.searchProduct{
+    display: flex;
+    position: absolute;
+    top: 2rem;
+    left: 30rem;
+  width: 27rem;
+}
+.searchProduct button{
+    display: flex;
+    position: absolute;
+    top:1rem;
+    left: 33rem;
+    padding: 10px;
+    width: 35px;
+    background-color: cadetblue;
+}
 
 .haveSubMenu:hover .submenu {
     display: flex !important;
@@ -106,7 +122,8 @@ header ul li a {
 .nameUser{
     font-weight: bolder;
     position: absolute;
-    right: 100px;
+    right: 50px;
+    top: 2rem;
    color: rgb(192, 45, 8);
    padding: 10px;
    margin: 5px;

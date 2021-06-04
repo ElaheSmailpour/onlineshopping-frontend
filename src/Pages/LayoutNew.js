@@ -82,11 +82,14 @@ const LayoutNew = () => {
     return (
         <header className="myHeader">
             <h1 className="headerhome">Eli Shop</h1>
-
+           
             {name && <p className="nameUser">welcome: {name}</p>}
 
 
-           
+            <div className="searchProduct">
+                    <button><i className="fa fa-fw fa-search fa-5"></i></button>
+                    <input className="formSearchProduct" type="text" placeholder="Search"  />
+                </div>
             <nav>
                 <ul>
                     <li onClick={() => setOpenAccountDialog(true)}>
@@ -176,7 +179,7 @@ const LayoutNew = () => {
 
             </Dialog>
 
-
+            
         </header>
     )
 }
