@@ -77,3 +77,5 @@ const Signup = () => {
     )
 }
 export default Signup
+
+//im diese projekt signup.js nicht benuzt sondrn habe ich  signupgoogle.js verwandet.

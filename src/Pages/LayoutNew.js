@@ -95,6 +95,7 @@ const LayoutNew = () => {
             else {
                 serachProductApi(searchProduct).then((res) => {
                     setProductList(res.data)
+                    
                 }).catch((error) => {
                     console.log("error with serachProduct", error)
                 })

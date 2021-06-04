@@ -4,7 +4,7 @@ import "../Pages/styles/ProductItemCategory.css"
 import { Link } from "react-router-dom"
 import { addcartinNote } from "../api/productApi"
 import { useHistory } from "react-router-dom"
-const ProductItemCategory = ({ productprice, productimage, productid, noteremove, updatedata,  addcartprops }) => {
+const ProductItemCategory = ({ productprice, productimage, productid, noteremove, updatedata,  addcartprops ,productname}) => {
 
     const remove = () => {
         removenote(productid).then((res) => {
@@ -33,7 +33,7 @@ const ProductItemCategory = ({ productprice, productimage, productid, noteremove
                 </Link>
 
                 <div className="ProductItemCategoryText">
-                   
+                   <p>Titel:{productname}</p>
                     <p>price:{productprice}</p>
                 </div>
 
