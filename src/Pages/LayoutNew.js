@@ -97,11 +97,19 @@ const LayoutNew = () => {
                         Account
                     </li>
                     <li>
-                        <ShoppingCartIcon/>
+                       
+                       <span className="spanNote">
+                               {countNote}
+                               </span>
+                       <Link to={"/note"}><FavoriteIcon/></Link>
+
+                   </li>
+                    <li>
+                       
                         <span className="spancart">
                                 {cartcount}
                                 </span>
-                        <Link to={"/shoppingcart"}>Shopping Cart</Link>
+                        <Link to={"/shoppingcart"}><ShoppingCartIcon/></Link>
 
                     </li>
                     <li onClick={(e) => handleOpenCategory(e)}>
@@ -109,17 +117,11 @@ const LayoutNew = () => {
 
                         Category
                     </li>
-                    <li>
-                        <FavoriteIcon/>
-                        <span className="spanNote">
-                                    {countNote}
-                                </span>
-                        <Link to={"/note"}>Notes</Link>
-                    </li>
+                   
                     <li>
                       
-                        <ContactPhoneIcon/>
-                        <Link to={"/contact"}>Contact</Link>
+                       
+                        <Link to={"/contact"}> <ContactPhoneIcon/>Contact</Link>
                     </li>
                 </ul>
             </nav>
