@@ -9,6 +9,7 @@ i18n
     lng: 'en',
     backend: {
       /* translation file path */
+   
       loadPath:  "/http://localhost:5000/{{lng}}/{{ns}}.json"
     },
     fallbackLng: 'en',
