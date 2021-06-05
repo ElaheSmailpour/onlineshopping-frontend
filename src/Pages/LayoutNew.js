@@ -123,7 +123,11 @@ const LayoutNew = () => {
             </div>
             <nav>
                 <ul>
-                <li Link to={"/language"}><LanguageIcon/></li>
+             
+                <li>
+              
+               <Link to={"/language"}>   <LanguageIcon/></Link>
+                </li>
 
                     <li onClick={() => setOpenAccountDialog(true)}>
                         <AccountBoxIcon />

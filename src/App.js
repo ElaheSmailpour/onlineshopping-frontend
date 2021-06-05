@@ -61,7 +61,7 @@ function App() {
             <Route path='*'><NotFound /> </Route>
           </Switch>
         </main>
-      <Language/>
+    
       </div>
       
     </Router>
