@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 
 import React from "react"
+import Language from "./Pages/Language"
 import Layout from "./Pages/Layout"
 import ProductDetails from './Pages/ProductDetails'
 import LayoutNew from "./Pages/LayoutNew"
@@ -57,7 +58,7 @@ function App() {
             <Route path='*'><NotFound /> </Route>
           </Switch>
         </main>
-     
+       < Language/>
       </div>
       
     </Router>
