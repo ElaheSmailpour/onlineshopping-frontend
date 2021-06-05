@@ -9,8 +9,9 @@ i18n
     lng: 'en',
     backend: {
       /* translation file path */
-   
-      loadPath:  "/http://localhost:5000/{{lng}}/{{ns}}.json"
+    //loadPath:"/http://localhost:5000/{{lng}}/{{ns}}.json"
+      loadPath:'/assets/i18n/{{ns}}/{{lng}}.json'
+
     },
     fallbackLng: 'en',
     debug: true,
