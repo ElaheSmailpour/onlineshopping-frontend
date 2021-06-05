@@ -25,6 +25,7 @@ import ChangeProfile from "./Pages/ChangeProfile"
 import Signupgoogle from "./Pages/Signupgoogle"
   import  Google from "./Pages/Google"
   import ProductListCategory from "./Pages/ProductListCategory"
+
  import Pay from "./Pages/Pay"
 function App() {
 
@@ -52,13 +53,15 @@ function App() {
             <Route path='/NewProduct'><NewProduct/></Route>
             <Route path='/google'><Google/></Route>
             <Route path='/signup'><Signupgoogle/></Route>
+            
+            <Route path='/language'><Language/></Route>
             <PrivateRoute path='/changeProfile' Component={ChangeProfile}></PrivateRoute>
             <Route path='/ProductListCategory/:cat'><ProductListCategory/></Route>
             <Route path='/productdetails/:id'><ProductDetails/></Route>
             <Route path='*'><NotFound /> </Route>
           </Switch>
         </main>
-       < Language/>
+      <Language/>
       </div>
       
     </Router>

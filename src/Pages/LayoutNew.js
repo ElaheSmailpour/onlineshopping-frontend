@@ -14,7 +14,7 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import "../Pages/styles/layoutNew.css"
 import { serachProductApi } from "../api/productApi"
 import ProductItemCategory from "./ProductItemCategory"
-
+import LanguageIcon from '@material-ui/icons/Language';
 
 const LayoutNew = () => {
     const [cartcount, setCartcount] = useState("")
@@ -95,7 +95,7 @@ const LayoutNew = () => {
             else {
                 serachProductApi(searchProduct).then((res) => {
                     setProductList(res.data)
-                    
+
                 }).catch((error) => {
                     console.log("error with serachProduct", error)
                 })
@@ -123,10 +123,13 @@ const LayoutNew = () => {
             </div>
             <nav>
                 <ul>
+                <li Link to={"/language"}><LanguageIcon/></li>
+
                     <li onClick={() => setOpenAccountDialog(true)}>
                         <AccountBoxIcon />
                         Account
                     </li>
+                   
                     <li>
 
                         <span className="spanNote">
@@ -174,7 +177,7 @@ const LayoutNew = () => {
                         <ChevronRightIcon />
                     </li>
 
-
+               
                 </ul>
 
 
