@@ -9,7 +9,7 @@ import {
 import { Suspense } from 'react'
 import React from "react"
 import Language from "./Pages/Language"
-import Layout from "./Pages/Layout"
+
 import ProductDetails from './Pages/ProductDetails'
 import LayoutNew from "./Pages/LayoutNew"
 import Login from "./Pages/Login"

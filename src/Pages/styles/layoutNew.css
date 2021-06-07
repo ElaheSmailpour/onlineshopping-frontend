@@ -35,10 +35,22 @@ header ul li a {
 
 .paperDialog {
     position: absolute !important;
-    left: 4rem;
+    left: 19em;
     top: 3.5rem;
     /*padding: 1rem;*/
 }
+
+.paperDialogCat {
+    position: absolute !important;
+    left:  30rem !important;
+    top: 3.5rem;
+    /*padding: 1rem;*/
+}
+
+.paperDialogCat .submenu {
+    left:39rem !important;
+}
+
 
 .navbar_image {
     height: 3rem;

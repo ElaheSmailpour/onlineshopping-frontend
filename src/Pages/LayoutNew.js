@@ -177,7 +177,7 @@ const searchlogo=()=>{
             </nav>
             {userImage && <img className="navbar_image" src={userImage} alt="foto" />}
 
-            <Dialog classes={{ paper: "paperDialog" }} open={openCategoryDialog} onClose={onCloseCategoryDialog}>
+            <Dialog classes={{ paper: "paperDialog paperDialogCat"  }} open={openCategoryDialog} onClose={onCloseCategoryDialog}>
                 <ul>
                     <li className={"haveSubMenu"}>
                         <span>Category</span>
