@@ -23,7 +23,7 @@ const ProductDetails = () => {
             console.log(err)
         })
 
-    }, [])
+    }, [params.id])
     const history = useHistory()
     const note = () => {
 

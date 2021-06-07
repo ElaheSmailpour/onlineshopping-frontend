@@ -13,7 +13,7 @@ import { Dialog } from "@material-ui/core";
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import "../Pages/styles/layoutNew.css"
 import { serachProductApi } from "../api/productApi"
-import ProductItemCategory from "./ProductItemCategory"
+import { useTranslation } from 'react-i18next'
 import LanguageIcon from '@material-ui/icons/Language';
 
 const LayoutNew = () => {
@@ -25,7 +25,9 @@ const LayoutNew = () => {
     const [userImage, setUserImage] = useState("")
     const [searchProduct, setSearchProduct] = useState("")
     const [productlist, setProductList] = useState([])
+    const [loading, setLoading] = useState(true)
 
+    const { t } = useTranslation()
     useEffect(() => {
         getmeDate()
         setInterval(getmeDate, 5000)
@@ -85,23 +87,32 @@ const LayoutNew = () => {
     }
     const name = localStorage.getItem("name")
 
+const searchlogo=()=>{
+    if (searchProduct === "") {
+        setProductList([])
+    }
+    else {
+        serachProductApi(searchProduct).then((res) => {
+            setProductList(res.data)
+            setLoading(false)
 
+        }).catch((error) => {
+            console.log("error with serachProduct", error)
+        })
+    }
+}
     const searchkeyup = (event) => {
         console.log(event.key)
         if (event.key === "Enter") {
-            if (searchProduct === "") {
-                setProductList([])
-            }
-            else {
-                serachProductApi(searchProduct).then((res) => {
-                    setProductList(res.data)
-
-                }).catch((error) => {
-                    console.log("error with serachProduct", error)
-                })
-            }
+           searchlogo()
 
         }
+    }
+
+    const showsearch=()=>{
+        setSearchProduct("")
+        setProductList([])
+        
     }
     const getSearch = (event) => {
 
@@ -114,26 +125,27 @@ const LayoutNew = () => {
         <header className="myHeader">
             <h1 className="headerhome">Eli Shop</h1>
 
-            {name && <p className="nameUser">welcome: {name}</p>}
+            {name && <p className="nameUser">Hi: {name}</p>}
 
 
             <div className="searchProduct">
-                <button><i className="fa fa-fw fa-search fa-5"></i></button>
+                <button onClick={searchlogo}><i className="fa fa-fw fa-search fa-5"></i></button>
                 <input className="formSearchProduct" type="text" placeholder="Search" value={searchProduct} onChange={getSearch} onKeyUp={searchkeyup} />
             </div>
             <nav>
                 <ul>
-             
-                <li>
-              
-               <Link to={"/language"}>   <LanguageIcon/></Link>
-                </li>
+
+                    <li>
+
+                        <Link to={"/language"}>   <LanguageIcon /></Link>
+                    </li>
 
                     <li onClick={() => setOpenAccountDialog(true)}>
                         <AccountBoxIcon />
-                        Account
+                        {t('Account.label')}
+                        
                     </li>
-                   
+
                     <li>
 
                         <span className="spanNote">
@@ -181,7 +193,7 @@ const LayoutNew = () => {
                         <ChevronRightIcon />
                     </li>
 
-               
+
                 </ul>
 
 
@@ -218,16 +230,17 @@ const LayoutNew = () => {
 
 
             </Dialog>
+            <div className="searchbox">
+                {productlist.length === 0 && searchProduct && !loading && <p>Not Found</p>}
+                <ul>
+                    {productlist.map((item, index) => {
+                        return <li key={index} onClick={showsearch}><Link to={`/productdetails/${item._id}`}> {item.name}</Link>
+                        </li>
+                    })}
+                </ul>
+            </div>
 
-            {productlist.length === 0 && searchProduct && <p>Not Found</p>}
 
-            {productlist.map((item, index) => {
-                return <div key={index}> <ProductItemCategory productimage={item.image}
-                    productprice={item.price}
-                    productid={item._id}
-                />
-                </div>
-            })}
         </header>
     )
 }

@@ -70,8 +70,9 @@ header ul li a {
     display: flex;
     position: absolute;
     top: 2rem;
-    left: 30rem;
+    left: 35rem;
   width: 27rem;
+  
 }
 .searchProduct button{
     display: flex;
@@ -128,4 +129,32 @@ header ul li a {
    padding: 10px;
    margin: 5px;
 
+}
+.searchbox{
+    position: absolute;
+    right: 98px;
+    top: 5rem;
+    background-color: white;
+    
+    width: 20rem;
+    z-index: 100;
+}
+.searchbox ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    list-style: none;
+    padding: unset;
+    margin: unset;
+}
+.searchbox ul li{
+    padding: 0.3rem;
+    border-bottom: 2px grey solid;
+   
+}
+.searchbox ul li:first-child{
+    border-top: 2px rgb(160, 233, 227) solid;
+}
+.searchbox ul li:hover{
+    background-color:rgb(241, 205, 217) ;
 }

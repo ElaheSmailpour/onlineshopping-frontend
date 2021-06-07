@@ -6,7 +6,7 @@ import {
 
 
 } from "react-router-dom";
-
+import { Suspense } from 'react'
 import React from "react"
 import Language from "./Pages/Language"
 import Layout from "./Pages/Layout"
@@ -30,7 +30,7 @@ import Signupgoogle from "./Pages/Signupgoogle"
 function App() {
 
   return (
-
+    <Suspense fallback={null}>
     <Router>
       <div className="App">
   <div className="router"></div>
@@ -61,11 +61,11 @@ function App() {
             <Route path='*'><NotFound /> </Route>
           </Switch>
         </main>
-    
+       
       </div>
       
     </Router>
-  
+    </Suspense>
  
   );
 }
