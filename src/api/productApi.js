@@ -55,7 +55,7 @@ export const removenote = (productid) => {
 
 
 export const addProductApi = (product) => {
-    return getAxios().post("/product", product)
+    return getAxios().post("/product/multiImage", product)
 }
 
 export const serachProductApi = (search) => {

@@ -87,32 +87,32 @@ const LayoutNew = () => {
     }
     const name = localStorage.getItem("name")
 
-const searchlogo=()=>{
-    if (searchProduct === "") {
-        setProductList([])
-    }
-    else {
-        serachProductApi(searchProduct).then((res) => {
-            setProductList(res.data)
-            setLoading(false)
+    const searchlogo = () => {
+        if (searchProduct === "") {
+            setProductList([])
+        }
+        else {
+            serachProductApi(searchProduct).then((res) => {
+                setProductList(res.data)
+                setLoading(false)
 
-        }).catch((error) => {
-            console.log("error with serachProduct", error)
-        })
+            }).catch((error) => {
+                console.log("error with serachProduct", error)
+            })
+        }
     }
-}
     const searchkeyup = (event) => {
         console.log(event.key)
         if (event.key === "Enter") {
-           searchlogo()
+            searchlogo()
 
         }
     }
 
-    const showsearch=()=>{
+    const showsearch = () => {
         setSearchProduct("")
         setProductList([])
-        
+
     }
     const getSearch = (event) => {
 
@@ -126,15 +126,17 @@ const searchlogo=()=>{
             <h1 className="headerhome">Eli Shop</h1>
 
             {name && <p className="nameUser">Hi: {name}</p>}
-
-
             <div className="searchProduct">
                 <button onClick={searchlogo}><i className="fa fa-fw fa-search fa-5"></i></button>
                 <input className="formSearchProduct" type="text" placeholder="Search" value={searchProduct} onChange={getSearch} onKeyUp={searchkeyup} />
             </div>
             <nav>
                 <ul>
+                    <li>
 
+
+                        <Link to={"/newProduct"}>NewProduct</Link>
+                    </li>
                     <li>
 
                         <Link to={"/language"}>   <LanguageIcon /></Link>
@@ -143,7 +145,7 @@ const searchlogo=()=>{
                     <li onClick={() => setOpenAccountDialog(true)}>
                         <AccountBoxIcon />
                         {t('Account.label')}
-                        
+
                     </li>
 
                     <li>
@@ -173,11 +175,13 @@ const searchlogo=()=>{
 
                         <Link to={"/contact"}> <ContactPhoneIcon />Contact</Link>
                     </li>
+
+
                 </ul>
             </nav>
             {userImage && <img className="navbar_image" src={userImage} alt="foto" />}
 
-            <Dialog classes={{ paper: "paperDialog paperDialogCat"  }} open={openCategoryDialog} onClose={onCloseCategoryDialog}>
+            <Dialog classes={{ paper: "paperDialog paperDialogCat" }} open={openCategoryDialog} onClose={onCloseCategoryDialog}>
                 <ul>
                     <li className={"haveSubMenu"}>
                         <span>Category</span>

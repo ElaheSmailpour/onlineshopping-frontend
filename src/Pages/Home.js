@@ -1,6 +1,7 @@
 
 import React from 'react';
 import shop1 from "../Pages/images/shop1.jpeg"
+
 import "./styles/home.css"
 const Home = () => {
    
@@ -13,6 +14,7 @@ const Home = () => {
             <img  className="shopImage" src={shop1}  alt="foto"/>
            
             </div>
+           
         </div>
     )
 }

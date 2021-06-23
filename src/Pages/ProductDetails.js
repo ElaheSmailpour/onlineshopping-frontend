@@ -2,17 +2,18 @@ import React from "react"
 import { createnote } from "../api/productApi"
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from 'react';
+
 import { getproductdetails } from "../api/productApi"
 import { useHistory } from "react-router-dom"
 import { addcartinNote } from "../api/productApi"
 import "../Pages/styles/productdetails.css"
 import { Card } from "react-bootstrap"
 import { Link } from "react-router-dom"
-
+import ProductsImageMulti from './ProductsImageMulti'
 const ProductDetails = () => {
     const params = useParams()
     const [data, setData] = useState("")
-   
+
     useEffect(() => {
 
         getproductdetails(params.id).then((response) => {
@@ -39,27 +40,34 @@ const ProductDetails = () => {
     const addcard = () => {
         addcartinNote(params.id, 1).then((res) => {
             history.push("/shoppingcart")
-     
+
         }).catch(err => {
             console.log("error axios ProductDetails=", err)
             console.log(err)
         })
-     
+
 
     }
-   
+
     return (
         <div className="ProductDetails">
             <div className="ProductDetailscontainer">
                 <div className="detail">
-                    {data.image && <img className="ProductDetailImage" src={data.image} alt="Foto" />}
+                    {data.imagemulti &&
+                        <ProductsImageMulti multi={data.imagemulti} />}
                 </div>
+                <video width="400" controls>
+                    <source src={data.video} type="video/mp4" />
+                  
+  Your browser does not support HTML video.
+</video>
+
                 <div className="detailstext">
                     <p>Title:{data.name}</p>
                     <p>artikelnummer:{data.artikelnummer}</p>
                     <p>price:{data.price}</p>
 
-                    
+
                 </div>
                 <div className="productdetailsDiv">
                     <button className="productdetailsButton" onClick={addcard}><i className="fas fa-shopping-cart fa-2x"></i>Add to cart</button>
