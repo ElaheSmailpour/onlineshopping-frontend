@@ -56,11 +56,12 @@ const ProductDetails = () => {
                     {data.imagemulti &&
                         <ProductsImageMulti multi={data.imagemulti} />}
                 </div>
+                {data.video && 
                 <video width="400" controls>
                     <source src={data.video} type="video/mp4" />
                   
   Your browser does not support HTML video.
-</video>
+</video>}
 
                 <div className="detailstext">
                     <p>Title:{data.name}</p>
